@@ -6,8 +6,8 @@
  */
 
 #include <src/interfaces/IObject.h>
-#include <src/agent/ObjectAgent.h>
-#include <src/player/ObjectPlayer.h>
+#include <src/logic/agent/ObjectAgent.h>
+#include <src/logic/player/ObjectPlayer.h>
 
 
 std::shared_ptr<IObject> IObject::createAgent() {

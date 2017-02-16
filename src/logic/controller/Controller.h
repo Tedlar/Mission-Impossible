@@ -8,7 +8,7 @@
 #ifndef CONTROLLER_CONTROLLER_H_
 #define CONTROLLER_CONTROLLER_H_
 
-#include "../interfaces/IController.h"
+#include <src/interfaces/IController.h>
 
 
 class Controller : public IController {

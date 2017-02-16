@@ -12,9 +12,19 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 find_package(Boost REQUIRED)
 find_package(Qt5Core REQUIRED)
+find_package(Qt5Widgets REQUIRED)
 
-include_directories(${Boost_INCLUDE_DIRS} ${Qt5Core_INCLUDE_DIRS})
-link_directories(${Boost_LIBRARY_DIRS} ${Qt5Core_LIBRARY_DIRS})
+include_directories(
+    ${Boost_INCLUDE_DIRS}
+    ${Qt5Core_INCLUDE_DIRS}
+    ${Qt5Widgets_INCLUDE_DIRS})
+link_directories(
+    ${Boost_LIBRARY_DIRS}
+    ${Qt5Core_LIBRARY_DIRS}
+    ${Qt5Widgets_LIBRARY_DIRS})
 add_executable(${PROJECT_NAME} ${sources} ${headers})
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "game")
-target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${Qt5Core_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} 
+    ${Boost_LIBRARIES}
+    ${Qt5Core_LIBRARIES}
+    ${Qt5Widgets_LIBRARIES})

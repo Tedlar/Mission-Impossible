@@ -6,7 +6,7 @@
  */
 
 #include "IController.h"
-#include "../controller/Controller.h"
+#include <src/logic/controller/Controller.h>
 
 
 std::shared_ptr<IController> IController::produceController() {

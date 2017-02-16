@@ -6,50 +6,63 @@
  */
 
 #include <src/AppMain.h>
+#include <QObject>
 
-AppMain::AppMain()
-: agentNumber_(8) {}
 
 AppMain::~AppMain() {}
 
 void AppMain::create() {
-	createController();
+	createGUI();
+	createLogic();
 }
 
-void AppMain::configure(int argc, char **argv) {
-	configureController();
+void AppMain::configure(int& argc, char **argv) {
+	configureGUI(argc, argv);
+	configureLogic(argc, argv);
 }
 
 void AppMain::initialize() {
-	initializeController();
+	initializeGUI();
+	initializeLogic();
+	QObject::connect(gui_.get(), SIGNAL(sendKeySignal(KeyType)), logic_.get(), SLOT(onSendKeySignal(KeyType)));
 }
 
 void AppMain::start() {
-	startController();
+	startLogic();
+	startGUI();
 }
 
-void AppMain::createController() {
-	controller_ = IController::produceController();
-	controller_->create();
+void AppMain::createGUI() {
+	gui_ = IGUI::createGUI();
+	gui_->create();
 }
 
-void AppMain::createObjects() {
-	objectsMap_[0] = IObject::createPlayer();
-	for (int i=1; i<= agentNumber_; ++i)
-		objectsMap_[i] = IObject::createAgent();
-	for(auto& pair : objectsMap_)
-		pair.second->create();
+void AppMain::createLogic() {
+	logic_ = ILogic::createLogic();
+	logic_->create();
 }
 
-void AppMain::configureController() {
-	controller_->configure();
+void AppMain::configureGUI(int argc, char **argv) {
+	gui_->configure(argc, argv);
 }
 
-void AppMain::initializeController() {
-	controller_->initialize();
+void AppMain::configureLogic(int argc, char **argv) {
+	logic_->configure(argc, argv);
 }
 
-void AppMain::startController() {
-	controller_->start();
+void AppMain::initializeGUI() {
+	gui_->initialize();
+}
+
+void AppMain::initializeLogic() {
+	logic_->initialize();
+}
+
+void AppMain::startGUI() {
+	gui_->start();
+}
+
+void AppMain::startLogic() {
+	logic_->start();
 }
 

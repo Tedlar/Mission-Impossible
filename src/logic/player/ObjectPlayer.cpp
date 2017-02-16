@@ -5,7 +5,8 @@
  *      Author: tedlar
  */
 
-#include <src/player/ObjectPlayer.h>
+#include <src/logic/player/ObjectPlayer.h>
+
 
 ObjectPlayer::ObjectPlayer() {}
 

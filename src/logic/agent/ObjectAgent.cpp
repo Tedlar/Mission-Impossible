@@ -5,7 +5,8 @@
  *      Author: tedlar
  */
 
-#include <src/agent/ObjectAgent.h>
+#include <src/logic/agent/ObjectAgent.h>
+
 
 ObjectAgent::ObjectAgent() {}
 

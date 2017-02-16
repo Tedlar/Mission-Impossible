@@ -5,7 +5,7 @@
  *      Author: tedlar
  */
 
-#include <src/controller/Controller.h>
+#include <src/logic/controller/Controller.h>
 
 Controller::Controller() {}
 
