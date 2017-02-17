@@ -21,7 +21,9 @@ public:
 	void initialize();
 	void start();
 
-	void receiveKeyGame(KeyType _type);
+	void configureGame(uint8_t _n, uint8_t _sx, uint8_t _sy);
+	void startGame();
+	void stopGame();
 };
 
 #endif // CONTROLLER_CONTROLLER_H_

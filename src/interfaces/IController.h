@@ -26,7 +26,9 @@ public:
 	virtual void initialize() = 0;
 	virtual void start() = 0;
 
-	virtual void receiveKeyGame(KeyType) = 0;
+	virtual void configureGame(uint8_t _n, uint8_t _sx, uint8_t _sy) = 0;
+	virtual void startGame() = 0;
+	virtual void stopGame() = 0;
 
 signals:
 	void sendObjectPossitionSignal(uint8_t, uint8_t, uint8_t);

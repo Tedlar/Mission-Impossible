@@ -24,11 +24,16 @@ public:
 	virtual void initialize() = 0;
 	virtual void start() = 0;
 
+	virtual void receiveKeyGame(KeyType) = 0;
+
 signals:
-	void sendObjectPossitionSignal(uint8_t, uint8_t, uint8_t);
+	void sendObjectPossitionSignal(uint8_t _id, uint8_t _x, uint8_t _y);
 
 public slots:
-	virtual void onSendKeySignal(KeyType) = 0;
+	virtual void onSendKeySignal(KeyType _key) = 0;
+	virtual void onConfigureGameSignal(uint8_t _n, uint8_t _sx, uint8_t _sy) = 0;
+	virtual void onStartGameSignal() = 0;
+	virtual void onStopGameSignal() = 0;
 };
 
 

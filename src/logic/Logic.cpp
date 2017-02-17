@@ -14,14 +14,12 @@ Logic::~Logic() {}
 
 void Logic::create() {
 	createController();
-	createKeyGameHandler();
 	createKeyManager();
 	createObjects();
 }
 
 void Logic::configure(int& argc, char **argv) {
 	configureController();
-	configureKeyGameHandler();
 }
 
 void Logic::initialize() {
@@ -30,22 +28,42 @@ void Logic::initialize() {
 
 void Logic::start() {
 	startController();
-	startKeyGameHandler();
 }
 
-void Logic::onSendKeySignal(KeyType _type) {
-	qDebug() << _type;
-	keyManager_->write(_type);
+void Logic::receiveKeyGame(KeyType _key) {
+	qDebug() << "Logic::receiveKeyGame - key: " << _key;
+}
+
+void Logic::onSendKeySignal(KeyType _key) {
+	switch (_key) {
+		case MOVE_UP:
+		case MOVE_DOWN:
+		case MOVE_LEFT:
+		case MOVE_RIGHT:
+		case MOVE_STAY:
+			keyManager_->write(_key);
+			break;
+		default:
+			receiveKeyGame(_key);
+			break;
+	}
+}
+
+void Logic::onConfigureGameSignal(uint8_t _n, uint8_t _sx, uint8_t _sy) {
+	controller_->configureGame(_n, _sx, _sy);
+}
+
+void Logic::onStartGameSignal() {
+	controller_->startGame();
+}
+
+void Logic::onStopGameSignal() {
+	controller_->stopGame();
 }
 
 void Logic::createController() {
 	controller_ = IController::produceController();
 	controller_->create();
-}
-
-void Logic::createKeyGameHandler() {
-	keyGameHandler_ = IKeyGameHandler::createKeyGameHandler();
-	keyGameHandler_->create();
 }
 
 void Logic::createKeyManager() {
@@ -64,19 +82,11 @@ void Logic::configureController() {
 	controller_->configure();
 }
 
-void Logic::configureKeyGameHandler() {
-	keyGameHandler_->configure(controller_, keyManager_);
-}
-
 void Logic::initializeController() {
 	controller_->initialize();
 }
 
 void Logic::startController() {
 	controller_->start();
-}
-
-void Logic::startKeyGameHandler() {
-	keyGameHandler_->start(keyGameHandler_);
 }
 

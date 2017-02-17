@@ -24,7 +24,17 @@ void AppMain::configure(int& argc, char **argv) {
 void AppMain::initialize() {
 	initializeGUI();
 	initializeLogic();
-	QObject::connect(gui_.get(), SIGNAL(sendKeySignal(KeyType)), logic_.get(), SLOT(onSendKeySignal(KeyType)));
+
+	QObject::connect(gui_.get(),   SIGNAL(sendKeySignal(KeyType)),
+                     logic_.get(), SLOT(onSendKeySignal(KeyType)));
+	QObject::connect(gui_.get(),   SIGNAL(configureGameSignal(uint8_t,uint8_t,uint8_t)),
+                     logic_.get(), SLOT(onConfigureGameSignal(uint8_t,uint8_t,uint8_t)));
+	QObject::connect(gui_.get(),   SIGNAL(startGameSignal()),
+                     logic_.get(), SLOT(onStartGameSignal()));
+	QObject::connect(gui_.get(),   SIGNAL(stopGameSignal()),
+                     logic_.get(), SLOT(onStopGameSignal()));
+	QObject::connect(logic_.get(), SIGNAL(sendObjectPossitionSignal(uint8_t,uint8_t,uint8_t)),
+                     gui_.get(),   SLOT(onSendObjectPossitionSignal(uint8_t,uint8_t,uint8_t)));
 }
 
 void AppMain::start() {

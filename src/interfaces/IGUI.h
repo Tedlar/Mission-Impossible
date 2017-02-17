@@ -28,9 +28,12 @@ public:
 
 signals:
 	void sendKeySignal(KeyType);
+	void configureGameSignal(uint8_t _n, uint8_t _sx, uint8_t _sy);
+	void startGameSignal();
+	void stopGameSignal();
 
 public slots:
-	virtual void onSendObjectPossitionSignal(uint8_t, uint8_t, uint8_t) = 0;
+	virtual void onSendObjectPossitionSignal(uint8_t _id, uint8_t _x, uint8_t _y) = 0;
 };
 
 #endif // SRC_INTERFACES_IGUI_H_
