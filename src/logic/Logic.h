@@ -10,7 +10,8 @@
 
 #include <src/interfaces/ILogic.h>
 #include <src/interfaces/IController.h>
-#include <src/interfaces/IKeyState.h>
+#include <src/interfaces/IKeyGameHandler.h>
+#include <src/interfaces/IKeyManager.h>
 #include <src/interfaces/IObject.h>
 
 #include <map>
@@ -30,20 +31,24 @@ public slots:
 
 private:
 	uint8_t agentNumber_;
-	std::shared_ptr<IController> controller_;
-	std::shared_ptr<IKeyState>   keyState_;
+	std::shared_ptr<IController>     controller_;
+	std::shared_ptr<IKeyGameHandler> keyGameHandler_;
+	std::shared_ptr<IKeyManager>     keyManager_;
 	std::map<uint8_t, std::shared_ptr<IObject>> objectsMap_;
 
 private:
 	void createController();
-	void createKeyState();
+	void createKeyGameHandler();
+	void createKeyManager();
 	void createObjects();
 
 	void configureController();
+	void configureKeyGameHandler();
 
 	void initializeController();
 
 	void startController();
+	void startKeyGameHandler();
 };
 
 #endif // LOGIC_LOGIC_H_

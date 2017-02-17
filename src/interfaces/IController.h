@@ -8,9 +8,8 @@
 #ifndef INTERFACES_ICONTROLLER_H_
 #define INTERFACES_ICONTROLLER_H_
 
-#include <qt5/QtCore/qobjectdefs.h>
-#include <qt5/QtCore/qobject.h>
-
+#include <src/interfaces/IKeyType.h>
+#include <QObject>
 #include <memory>
 
 
@@ -27,8 +26,10 @@ public:
 	virtual void initialize() = 0;
 	virtual void start() = 0;
 
+	virtual void receiveKeyGame(KeyType) = 0;
+
 signals:
-	void setObjectPosition(uint8_t id, uint8_t x, uint8_t y);
+	void sendObjectPossitionSignal(uint8_t, uint8_t, uint8_t);
 };
 
 

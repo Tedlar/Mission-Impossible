@@ -7,18 +7,21 @@
 
 #include <src/logic/Logic.h>
 #include <QDebug>
+#include <stdlib.h>
 
 
 Logic::~Logic() {}
 
 void Logic::create() {
 	createController();
-	createKeyState();
+	createKeyGameHandler();
+	createKeyManager();
 	createObjects();
 }
 
 void Logic::configure(int& argc, char **argv) {
 	configureController();
+	configureKeyGameHandler();
 }
 
 void Logic::initialize() {
@@ -27,10 +30,12 @@ void Logic::initialize() {
 
 void Logic::start() {
 	startController();
+	startKeyGameHandler();
 }
 
 void Logic::onSendKeySignal(KeyType _type) {
 	qDebug() << _type;
+	keyManager_->write(_type);
 }
 
 void Logic::createController() {
@@ -38,9 +43,13 @@ void Logic::createController() {
 	controller_->create();
 }
 
-void Logic::createKeyState() {
-	keyState_ = IKeyState::createKeyState();
-	keyState_->create();
+void Logic::createKeyGameHandler() {
+	keyGameHandler_ = IKeyGameHandler::createKeyGameHandler();
+	keyGameHandler_->create();
+}
+
+void Logic::createKeyManager() {
+	keyManager_ = IKeyManager::createKeyManager();
 }
 
 void Logic::createObjects() {
@@ -55,11 +64,19 @@ void Logic::configureController() {
 	controller_->configure();
 }
 
+void Logic::configureKeyGameHandler() {
+	keyGameHandler_->configure(controller_, keyManager_);
+}
+
 void Logic::initializeController() {
 	controller_->initialize();
 }
 
 void Logic::startController() {
 	controller_->start();
+}
+
+void Logic::startKeyGameHandler() {
+	keyGameHandler_->start(keyGameHandler_);
 }
 

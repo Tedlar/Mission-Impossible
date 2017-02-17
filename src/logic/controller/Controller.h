@@ -20,6 +20,8 @@ public:
 	void configure();
 	void initialize();
 	void start();
+
+	void receiveKeyGame(KeyType _type);
 };
 
 #endif // CONTROLLER_CONTROLLER_H_
