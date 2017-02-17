@@ -16,17 +16,11 @@
 GUI::~GUI() {}
 
 void GUI::create() {
-}
-
-void GUI::configure(int& argc, char **argv) {
-	argc_ = argc;
-	argv_ = argv;
 	app_ = std::make_shared<QApplication>(argc_, argv_);
 }
 
-void GUI::initialize() {
-//	app_->installEventFilter()
-}
+void GUI::configure(int& argc, char **argv) {}
+void GUI::initialize() {}
 
 void GUI::start() {
 	// Test -------

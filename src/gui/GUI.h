@@ -25,8 +25,8 @@ public slots:
 	void onSendObjectPossitionSignal(uint8_t, uint8_t, uint8_t);
 
 private:
-	int argc_;
-	char** argv_;
+	int argc_ = 1;
+	char* argv_[1] = { (char*)"Game" };
 	std::shared_ptr<QApplication> app_;
 };
 
