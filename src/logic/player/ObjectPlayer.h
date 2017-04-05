@@ -14,12 +14,9 @@
 class ObjectPlayer : public IObject {
 public:
 	ObjectPlayer();
-	~ObjectPlayer();
+	ObjectPlayer(const ObjectPlayer&) = delete;
 
-	void create();
-	void setPosition(uint8_t x, uint8_t y, uint16_t sizeX, uint16_t sizeY);
-	void getPosition(uint8_t& x, uint8_t& y);
-	uint8_t getSpeedValue();
+	void move(uint16_t& _x, uint16_t& _y, KeyType _key = MOVE_STAY);
 };
 
 #endif // PLAYER_OBJECTPLAYER_H_

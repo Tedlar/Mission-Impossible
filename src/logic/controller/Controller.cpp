@@ -6,17 +6,32 @@
  */
 
 #include <src/logic/controller/Controller.h>
+#include <iostream>
 
 
-Controller::Controller() {}
+Controller::Controller()
+: positionValid_(false), posX_(0), posY_(0) {}
 
-Controller::~Controller() {}
+void Controller::setPlayerPosition(uint16_t _posX, uint16_t _posY) {
+	std::cout << "Controller::setPlayerPosition" << std::endl;
+	posX_ = _posX;
+	posY_ = _posY;
+	positionValid_ = true;
+}
 
-void Controller::create() {}
-void Controller::configure() {}
-void Controller::initialize() {}
-void Controller::start() {}
+void Controller::setPlayerPositionLost() {
+	positionValid_ = false;
+}
 
-void Controller::configureGame(uint8_t _n, uint8_t _sx, uint8_t _sy) {}
-void Controller::startGame() {}
-void Controller::stopGame() {}
+bool Controller::getPlayerPosition(uint16_t& _posX, uint16_t& _posY) {
+	_posX = posX_;
+	_posY = posY_;
+	return positionValid_;
+}
+
+bool Controller::getPlayerPositionValid() {
+	return positionValid_;
+}
+
+
+

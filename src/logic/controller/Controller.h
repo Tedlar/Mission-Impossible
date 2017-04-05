@@ -14,16 +14,15 @@
 class Controller : public IController {
 public:
 	Controller();
-	virtual ~Controller();
 
-	void create();
-	void configure();
-	void initialize();
-	void start();
+	void setPlayerPosition(uint16_t _posX, uint16_t _posY);
+	void setPlayerPositionLost();
+	bool getPlayerPosition(uint16_t& _posX, uint16_t& _posY);
+	bool getPlayerPositionValid();
 
-	void configureGame(uint8_t _n, uint8_t _sx, uint8_t _sy);
-	void startGame();
-	void stopGame();
+private:
+	bool positionValid_;
+	uint16_t posX_, posY_;
 };
 
 #endif // CONTROLLER_CONTROLLER_H_

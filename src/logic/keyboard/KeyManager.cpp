@@ -14,26 +14,9 @@ KeyManager::KeyManager() {}
 KeyManager::~KeyManager() {}
 
 void KeyManager::write(const KeyType& _type) {
-	switch (_type) {
-		case MOVE_UP:
-		case MOVE_DOWN:
-		case MOVE_LEFT:
-		case MOVE_RIGHT:
-		case MOVE_STAY:
-			keyMove_.write(_type);
-			break;
-		case GAME_RESTART:
-		case GAME_RECONFIGURE:
-		case GAME_QUIT:
-			keyGame_.write(_type);
-			break;
-	}
+	keyQueue_.write(_type);
 }
 
-void KeyManager::readKeyGame(KeyType& _type) {
-	keyGame_.read(_type);
-}
-
-void KeyManager::readKeyMove(KeyType& _type) {
-	keyMove_.read(_type);
+void KeyManager::readKey(KeyType& _type) {
+	keyQueue_.read(_type);
 }

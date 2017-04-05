@@ -30,13 +30,10 @@ private:
 	void createLogic();
 
 	void configureGUI(int argc, char **argv);
-	void configureLogic(int argc, char **argv);
 
 	void initializeGUI();
-	void initializeLogic();
 
 	void startGUI();
-	void startLogic();
 
 };
 

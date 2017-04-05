@@ -10,11 +10,6 @@
 
 #include <src/interfaces/IKeyManager.h>
 #include <src/logic/keyboard/QueueData.h>
-#include <memory>
-
-
-//template<class T>
-//class QueueData;
 
 
 class KeyManager : public IKeyManager {
@@ -22,16 +17,11 @@ public:
 	KeyManager();
 	~KeyManager();
 
-	void create();
 	void write(const KeyType& _type);
-	void readKeyGame(KeyType&);
-	void readKeyMove(KeyType&);
+	void readKey(KeyType&);
 
 private:
-	QueueData<KeyType> keyGame_;
-	QueueData<KeyType> keyMove_;
-//	std::shared_ptr<QueueData<KeyType>> keyGame_;
-//	std::shared_ptr<QueueData<KeyType>> keyMove_;
+	QueueData<KeyType> keyQueue_;
 };
 
 #endif // LOGIC_KEYBOARD_KEYMANAGER_H_

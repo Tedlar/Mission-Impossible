@@ -7,86 +7,173 @@
 
 #include <src/logic/Logic.h>
 #include <QDebug>
-#include <stdlib.h>
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
 
+
+Logic::Logic()
+: playerMove_(0), objectNumber_(0), sizeX_(0), sizeY_(0) {
+	createController();
+	createKeyManager();
+}
 
 Logic::~Logic() {}
 
-void Logic::create() {
-	createController();
-	createKeyManager();
-	createObjects();
-}
-
-void Logic::configure(int& argc, char **argv) {
-	configureController();
-}
-
-void Logic::initialize() {
-	initializeController();
-}
-
-void Logic::start() {
-	startController();
-}
-
-void Logic::receiveKeyGame(KeyType _key) {
-	qDebug() << "Logic::receiveKeyGame - key: " << _key;
-}
 
 void Logic::onSendKeySignal(KeyType _key) {
-	switch (_key) {
-		case MOVE_UP:
-		case MOVE_DOWN:
-		case MOVE_LEFT:
-		case MOVE_RIGHT:
-		case MOVE_STAY:
-			keyManager_->write(_key);
-			break;
-		default:
-			receiveKeyGame(_key);
-			break;
-	}
+	if (!gameStarted_) return;
+	keyManager_->write(_key);
 }
 
-void Logic::onConfigureGameSignal(uint8_t _n, uint8_t _sx, uint8_t _sy) {
-	controller_->configureGame(_n, _sx, _sy);
+void Logic::onConfigureGameSignal(uint8_t _n, uint8_t _sizeX, uint8_t _sizeY) {
+	objectNumber_ = _n+1;
+	sizeX_ = _sizeX;
+	sizeY_ = _sizeY;
+	srand(time(NULL));
+	for (int i=0; i<objectNumber_; ++i) {
+		if (i == 0) {
+			objects_.push_back(IObject::createPlayer());
+			objects_.back()->setStartPosition((_sizeX-1)/2, (_sizeY-1)/2);
+			controller_->setPlayerPosition((_sizeX-1)/2, (_sizeY-1)/2);
+		} else {
+			objects_.push_back(IObject::createAgent());
+			uint16_t posX, posY, newX, newY;
+			while(true) {
+				posX = newX = rand()%_sizeX;
+				posY = newY = rand()%_sizeY;
+				if (!checkForObject(newX,newY, i, 4, false))
+					break;
+			}
+			objects_.back()->setStartPosition(posX, posY);
+		}
+		objects_.back()->setMapSize(_sizeX, _sizeY);
+		objects_.back()->setController(controller_);
+	}
+
+	printPositions();
+
 }
 
 void Logic::onStartGameSignal() {
-	controller_->startGame();
+	qDebug() << "Logic::onStartGameSignal";
+	gameStarted_ = true;
+	logicThread_ = std::make_shared<std::thread>(&Logic::logicLoop, this);
 }
 
 void Logic::onStopGameSignal() {
-	controller_->stopGame();
+	gameStarted_ = false;
+	keyManager_->write(GAME_QUIT);
+	logicThread_->join();
+	logicThread_ = nullptr;
 }
 
 void Logic::createController() {
 	controller_ = IController::produceController();
-	controller_->create();
 }
 
 void Logic::createKeyManager() {
 	keyManager_ = IKeyManager::createKeyManager();
 }
 
-void Logic::createObjects() {
-	objectsMap_[0] = IObject::createPlayer();
-	for (int i=1; i<= agentNumber_; ++i)
-		objectsMap_[i] = IObject::createAgent();
-	for(auto& pair : objectsMap_)
-		pair.second->create();
+void Logic::logicLoop() {
+	qDebug() << "Start logic loop";
+	KeyType key;
+	while (gameStarted_) {
+		keyManager_->readKey(key);
+		if (key == KeyType::GAME_QUIT) return;
+		switch (key) {
+			case MOVE_UP:
+			case MOVE_DOWN:
+			case MOVE_LEFT:
+			case MOVE_RIGHT:
+			case MOVE_STAY:
+				if (!playerMove(key)) {
+					std::cout << "%%%%%%%%%%%%%% END GAME" << std::endl;
+					emit endGameSignal();
+					gameStarted_ = false;
+				}
+				break;
+			case GAME_QUIT:
+				break;
+			case GAME_RECONFIGURE:
+				break;
+			case GAME_RESTART:
+				break;
+		}
+		printPositions();
+	}
+	qDebug() << "Stop logic loop";
 }
 
-void Logic::configureController() {
-	controller_->configure();
+bool Logic::playerMove(KeyType _key) {
+	uint16_t posX, posY, counter;
+	counter = 0;
+	for(auto& object : objects_) {
+		object->move(posX, posY, _key);
+		++playerMove_;
+
+		if (counter == 0 && checkForObject(posX,posY, counter, 1, false)) {
+			return false;
+		} else if (counter != 0 && checkForObject(posX,posY, counter, 1, true))
+			return false;
+
+		if (counter == 0 && playerMove_ < object->getSpeedValue()) {
+			return true;
+		} else
+			playerMove_ = 0;
+
+		if (counter != 0) {
+			object->getPosition(posX, posY);
+			if (checkForObject(posX, posY, counter, 3, true))
+				controller_->setPlayerPosition(posX, posY);
+		}
+		++counter;
+	}
+	return true;
 }
 
-void Logic::initializeController() {
-	controller_->initialize();
+bool Logic::checkForObject(uint16_t& _posX, uint16_t& _posY, uint8_t _id, uint8_t _view, bool _checkForPlayer) {
+	uint8_t currentID = 0;
+	uint16_t objX, objY;
+	int32_t deltaX, deltaY;
+	double range, view;
+	view = _view*_view;
+	for (auto& object : objects_) {
+		if (_checkForPlayer && currentID > 0) break;
+		if (currentID == _id) {
+			++currentID;
+			continue;
+		}
+		object->getPosition(objX, objY);
+		deltaX = objX-_posX;
+		deltaY = objY-_posY;
+		range = deltaX*deltaX + deltaY*deltaY;
+		if (range <= view) {
+			_posX = objX;
+			_posY = objY;
+			return true;
+		}
+		++currentID;
+	}
+	return false;
 }
 
-void Logic::startController() {
-	controller_->start();
+void Logic::printPositions() {
+	for (int i=sizeY_-1; i>=0; --i) {
+		for (int j=0; j<sizeX_; ++j) {
+			bool found = false;
+			for(auto& obj : objects_) {
+				uint16_t x,y;
+				obj->getPosition(x,y);
+				if (x == j && y == i)
+					found = true;
+			}
+			if (found)
+				std::cout << "*";
+			else
+				std::cout << "-";
+		}
+		std::cout << std::endl;
+	}
 }
-

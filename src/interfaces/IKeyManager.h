@@ -18,8 +18,7 @@ public:
 	static std::shared_ptr<IKeyManager> createKeyManager();
 
 	virtual void write(const KeyType& _type) = 0;
-	virtual void readKeyGame(KeyType&) = 0;
-	virtual void readKeyMove(KeyType&) = 0;
+	virtual void readKey(KeyType&) = 0;
 };
 
 
