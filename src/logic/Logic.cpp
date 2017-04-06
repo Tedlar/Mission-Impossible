@@ -13,12 +13,16 @@
 
 
 Logic::Logic()
-: playerMove_(0), objectNumber_(0), sizeX_(0), sizeY_(0) {
+: gameConfigured_(false), gameStarted_(false),
+  playerMove_(0), objectNumber_(0), sizeX_(0), sizeY_(0)
+{
 	createController();
 	createKeyManager();
 }
 
-Logic::~Logic() {}
+Logic::~Logic() {
+	onStopGameSignal();
+}
 
 
 void Logic::onSendKeySignal(KeyType _key) {
@@ -50,22 +54,31 @@ void Logic::onConfigureGameSignal(uint8_t _n, uint8_t _sizeX, uint8_t _sizeY) {
 		objects_.back()->setMapSize(_sizeX, _sizeY);
 		objects_.back()->setController(controller_);
 	}
+	gameConfigured_ = true;
 
+	//Debug
 	printPositions();
-
 }
 
 void Logic::onStartGameSignal() {
-	qDebug() << "Logic::onStartGameSignal";
+	if (!gameConfigured_) {
+		std::cerr << "Cannot start new game. Game not configured" << std::endl;
+		return;
+	}
 	gameStarted_ = true;
 	logicThread_ = std::make_shared<std::thread>(&Logic::logicLoop, this);
 }
 
 void Logic::onStopGameSignal() {
+	if (!gameStarted_) {
+		std::cerr << "Cannot stop game. Game not started" << std::endl;
+		return;
+	}
 	gameStarted_ = false;
 	keyManager_->write(GAME_QUIT);
 	logicThread_->join();
 	logicThread_ = nullptr;
+	gameClearLogic();
 }
 
 void Logic::createController() {
@@ -77,7 +90,6 @@ void Logic::createKeyManager() {
 }
 
 void Logic::logicLoop() {
-	qDebug() << "Start logic loop";
 	KeyType key;
 	while (gameStarted_) {
 		keyManager_->readKey(key);
@@ -95,15 +107,14 @@ void Logic::logicLoop() {
 				}
 				break;
 			case GAME_QUIT:
-				break;
 			case GAME_RECONFIGURE:
-				break;
 			case GAME_RESTART:
+				gameStarted_ = false;
 				break;
 		}
+		//Debug
 		printPositions();
 	}
-	qDebug() << "Stop logic loop";
 }
 
 bool Logic::playerMove(KeyType _key) {
@@ -112,6 +123,7 @@ bool Logic::playerMove(KeyType _key) {
 	for(auto& object : objects_) {
 		object->move(posX, posY, _key);
 		++playerMove_;
+		emit sendObjectPossitionSignal(counter, posX, posY);
 
 		if (counter == 0 && checkForObject(posX,posY, counter, 1, false)) {
 			return false;
@@ -159,17 +171,30 @@ bool Logic::checkForObject(uint16_t& _posX, uint16_t& _posY, uint8_t _id, uint8_
 	return false;
 }
 
+void Logic::gameClearLogic() {
+	gameConfigured_ = gameStarted_ = false;
+	for (auto& object : objects_)
+		object.reset();
+	objects_.clear();
+}
+
 void Logic::printPositions() {
 	for (int i=sizeY_-1; i>=0; --i) {
 		for (int j=0; j<sizeX_; ++j) {
 			bool found = false;
+			bool player = false;
 			for(auto& obj : objects_) {
 				uint16_t x,y;
 				obj->getPosition(x,y);
-				if (x == j && y == i)
+				if (x == j && y == i) {
 					found = true;
+					if ((&obj - &objects_[0]) == 0)
+						player = true;
+				}
 			}
-			if (found)
+			if (found && player)
+				std::cout << "@";
+			else if (found)
 				std::cout << "*";
 			else
 				std::cout << "-";

@@ -46,6 +46,7 @@ private:
 	void logicLoop();
 	bool playerMove(KeyType _key);
 	bool checkForObject(uint16_t& _posX, uint16_t& _posY, uint8_t _id, uint8_t _view, bool _checkForPlayer = true);
+	void gameClearLogic();
 
 	void printPositions();
 };

@@ -6,7 +6,6 @@
  */
 
 #include <src/logic/agent/ObjectAgent.h>
-#include <iostream>
 #include <cstdlib>
 #include <ctime>
 
@@ -44,7 +43,6 @@ void ObjectAgent::move(uint16_t& _posX, uint16_t& _posY, KeyType) {
 	_posY = targetY;
 	if (controller_->getPlayerPosition(targetX, targetY))
 		if ( posX_ == targetX && posY_ == targetY) {
-			std::cout << "Player position lost" << std::endl;
 			controller_->setPlayerPositionLost();
 		}
 	++moveCounter_;
@@ -56,11 +54,9 @@ void ObjectAgent::move(uint16_t& _posX, uint16_t& _posY, KeyType) {
 
 void ObjectAgent::selectAlgorithm() {
 	algorithmType_ = (AlgorithmType)(rand()%3+1);
-	std::cout << "ObjectAgent::selectAlgorithm - " << (int)algorithmType_ << std::endl;
 }
 
 MoveDirection ObjectAgent::moveAlgorithmDiagonally(uint16_t _posX, uint16_t _posY) {
-	std::cout << "ObjectAgent::moveAlgorithmDiagonally" << std::endl;
 	int32_t deltaX = _posX - posX_;
 	int32_t deltaY = _posY - posY_;
 	if (deltaX == 0 && deltaY == 0) {
@@ -73,7 +69,6 @@ MoveDirection ObjectAgent::moveAlgorithmDiagonally(uint16_t _posX, uint16_t _pos
 }
 
 MoveDirection ObjectAgent::moveAlgorithmFirstHorizontally(uint16_t _posX, uint16_t _posY) {
-	std::cout << "ObjectAgent::moveAlgorithmFirstHorizontally" << std::endl;
 	int32_t deltaX = _posX - posX_;
 	int32_t deltaY = _posY - posY_;
 	if (deltaX == 0 && deltaY == 0) {
@@ -86,7 +81,6 @@ MoveDirection ObjectAgent::moveAlgorithmFirstHorizontally(uint16_t _posX, uint16
 }
 
 MoveDirection ObjectAgent::moveAlgorithmFirstVertically(uint16_t _posX, uint16_t _posY) {
-	std::cout << "ObjectAgent::moveAlgorithmFirstVertically" << std::endl;
 	int32_t deltaX = _posX - posX_;
 	int32_t deltaY = _posY - posY_;
 	if (deltaX == 0 && deltaY == 0) {
