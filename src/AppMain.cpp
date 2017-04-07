@@ -6,50 +6,63 @@
  */
 
 #include <src/AppMain.h>
+#include <QObject>
+#include <iostream>
 
-AppMain::AppMain()
-: agentNumber_(8) {}
 
 AppMain::~AppMain() {}
 
 void AppMain::create() {
-	createController();
+	qRegisterMetaType<uint8_t>();
+	qRegisterMetaType<uint16_t>("uint16_t");
+	createGUI();
+	createLogic();
 }
 
-void AppMain::configure(int argc, char **argv) {
-	configureController();
+void AppMain::configure(int& argc, char **argv) {
+	configureGUI(argc, argv);
 }
 
 void AppMain::initialize() {
-	initializeController();
+
+	initializeGUI();
+	QObject::connect(gui_.get(),   SIGNAL(sendKeySignal(KeyType)),
+                     logic_.get(), SLOT(onSendKeySignal(KeyType)));
+	QObject::connect(gui_.get(),   SIGNAL(configureGameSignal(uint8_t,uint8_t,uint8_t)),
+                     logic_.get(), SLOT(onConfigureGameSignal(uint8_t,uint8_t,uint8_t)));
+	QObject::connect(gui_.get(),   SIGNAL(startGameSignal()),
+                     logic_.get(), SLOT(onStartGameSignal()));
+	QObject::connect(gui_.get(),   SIGNAL(stopGameSignal()),
+                     logic_.get(), SLOT(onStopGameSignal()));
+	QObject::connect(logic_.get(), SIGNAL(sendObjectPossitionSignal(uint16_t,uint16_t,uint16_t)),
+	gui_.get(),   SLOT(onSendObjectPossitionSignal(uint16_t,uint16_t,uint16_t)));
 }
 
 void AppMain::start() {
-	startController();
+//	logic_->onConfigureGameSignal(8, 25, 25);
+//	logic_->onStartGameSignal();
+	startGUI();
 }
 
-void AppMain::createController() {
-	controller_ = IController::produceController();
-	controller_->create();
+void AppMain::createGUI() {
+	gui_ = IGUI::createGUI();
+	gui_->create();
 }
 
-void AppMain::createObjects() {
-	objectsMap_[0] = IObject::createPlayer();
-	for (int i=1; i<= agentNumber_; ++i)
-		objectsMap_[i] = IObject::createAgent();
-	for(auto& pair : objectsMap_)
-		pair.second->create();
+void AppMain::createLogic() {
+	logic_ = ILogic::createLogic();
 }
 
-void AppMain::configureController() {
-	controller_->configure();
+void AppMain::configureGUI(int argc, char **argv) {
+	gui_->configure(argc, argv);
 }
 
-void AppMain::initializeController() {
-	controller_->initialize();
+void AppMain::initializeGUI() {
+	gui_->initialize();
 }
 
-void AppMain::startController() {
-	controller_->start();
+void AppMain::startGUI() {
+	gui_->start();
 }
+
 

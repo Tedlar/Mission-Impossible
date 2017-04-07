@@ -8,27 +8,19 @@
 #ifndef INTERFACES_ICONTROLLER_H_
 #define INTERFACES_ICONTROLLER_H_
 
-#include <qt5/QtCore/qobjectdefs.h>
-#include <qt5/QtCore/qobject.h>
-
 #include <memory>
 
 
-class IController : public QObject {
-
-	Q_OBJECT
+class IController {
 
 public:
 	virtual ~IController() {}
 	static std::shared_ptr<IController> produceController();
 
-	virtual void create() = 0;
-	virtual void configure() = 0;
-	virtual void initialize() = 0;
-	virtual void start() = 0;
-
-signals:
-	void setObjectPosition(uint8_t id, uint8_t x, uint8_t y);
+	virtual void setPlayerPosition(uint16_t _posX, uint16_t _posY) = 0;
+	virtual void setPlayerPositionLost() = 0;
+	virtual bool getPlayerPosition(uint16_t& _posX, uint16_t& _posY) = 0;
+	virtual bool getPlayerPositionValid() = 0;
 };
 
 

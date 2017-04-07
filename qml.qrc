@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="main.qml">res/main.qml</file>
+        <file alias="GameCanvas.qml">res/GameCanvas.qml</file>
+        <file alias="GameConfiguratorWindow.qml">res/GameConfiguratorWindow.qml</file>
+        <file alias="GameMenu.qml">res/GameMenu.qml</file>
+        <file alias="GameSignals.qml">res/GameSignals.qml</file>
+        <file alias="Object.qml">res/Object.qml</file>
+        <file>res/qtquickcontrols2.conf</file>
+    </qresource>
+</RCC>
