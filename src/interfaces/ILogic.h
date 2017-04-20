@@ -12,7 +12,6 @@
 #include <QObject>
 #include <memory>
 
-
 class ILogic : public QObject {
 	Q_OBJECT
 public:
@@ -20,7 +19,7 @@ public:
 	static std::shared_ptr<ILogic> createLogic();
 
 signals:
-	void sendObjectPossitionSignal(uint8_t _id, uint8_t _x, uint8_t _y);
+	void sendObjectPossitionSignal(uint16_t _id, uint16_t _x, uint16_t _y);
 	void endGameSignal();
 
 public slots:

@@ -10,7 +10,7 @@
 
 #include <src/interfaces/IGUI.h>
 #include <src/interfaces/ILogic.h>
-
+Q_DECLARE_METATYPE(uint16_t)
 
 class AppMain {
 public:

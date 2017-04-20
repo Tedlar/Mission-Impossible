@@ -16,6 +16,8 @@ Logic::Logic()
 : gameConfigured_(false), gameStarted_(false),
   playerMove_(0), objectNumber_(0), sizeX_(0), sizeY_(0)
 {
+	qRegisterMetaType<uint8_t>();
+	qRegisterMetaType<uint16_t>("uint16_t");
 	createController();
 	createKeyManager();
 }
@@ -35,11 +37,15 @@ void Logic::onConfigureGameSignal(uint8_t _n, uint8_t _sizeX, uint8_t _sizeY) {
 	sizeX_ = _sizeX;
 	sizeY_ = _sizeY;
 	srand(time(NULL));
+	gameClearLogic();
+	qDebug()<<"onConfigureGameSignal enemies: "<<_n<<" x: "<<_sizeX<<" y:"<<_sizeY;
 	for (int i=0; i<objectNumber_; ++i) {
 		if (i == 0) {
 			objects_.push_back(IObject::createPlayer());
 			objects_.back()->setStartPosition((_sizeX-1)/2, (_sizeY-1)/2);
 			controller_->setPlayerPosition((_sizeX-1)/2, (_sizeY-1)/2);
+			qDebug()<<"start counter: "<<0<<"posX: "<<(_sizeX-1)/2<<"posY: "<<(_sizeY-1)/2;
+			emit sendObjectPossitionSignal(0, (_sizeX-1)/2, (_sizeY-1)/2);
 		} else {
 			objects_.push_back(IObject::createAgent());
 			uint16_t posX, posY, newX, newY;
@@ -50,6 +56,8 @@ void Logic::onConfigureGameSignal(uint8_t _n, uint8_t _sizeX, uint8_t _sizeY) {
 					break;
 			}
 			objects_.back()->setStartPosition(posX, posY);
+			qDebug()<<"start counter: "<< objects_.size()+1 <<"posX: "<<posX<<"posY: "<<posY;
+			emit sendObjectPossitionSignal(i, posX, posY);
 		}
 		objects_.back()->setMapSize(_sizeX, _sizeY);
 		objects_.back()->setController(controller_);
@@ -65,8 +73,13 @@ void Logic::onStartGameSignal() {
 		std::cerr << "Cannot start new game. Game not configured" << std::endl;
 		return;
 	}
+	if (gameStarted_) return;
+	qDebug()<<"on Start Game Signal";
 	gameStarted_ = true;
+	if (logicThread_)
+		logicThread_->join();
 	logicThread_ = std::make_shared<std::thread>(&Logic::logicLoop, this);
+	qDebug()<<"on Start Game Signal 2";
 }
 
 void Logic::onStopGameSignal() {
@@ -123,6 +136,7 @@ bool Logic::playerMove(KeyType _key) {
 	for(auto& object : objects_) {
 		object->move(posX, posY, _key);
 		++playerMove_;
+		qDebug()<<"counter: "<<counter<<"posX: "<<posX<<"posY: "<<posY;
 		emit sendObjectPossitionSignal(counter, posX, posY);
 
 		if (counter == 0 && checkForObject(posX,posY, counter, 1, false)) {

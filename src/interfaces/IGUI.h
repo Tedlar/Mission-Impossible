@@ -33,7 +33,7 @@ signals:
 	void stopGameSignal();
 
 public slots:
-	virtual void onSendObjectPossitionSignal(uint8_t _id, uint8_t _x, uint8_t _y) = 0;
+	virtual void onSendObjectPossitionSignal(uint16_t _id, uint16_t _x, uint16_t _y) = 0;
 };
 
 #endif // SRC_INTERFACES_IGUI_H_

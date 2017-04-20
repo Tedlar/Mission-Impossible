@@ -13,6 +13,8 @@
 AppMain::~AppMain() {}
 
 void AppMain::create() {
+	qRegisterMetaType<uint8_t>();
+	qRegisterMetaType<uint16_t>("uint16_t");
 	createGUI();
 	createLogic();
 }
@@ -22,6 +24,7 @@ void AppMain::configure(int& argc, char **argv) {
 }
 
 void AppMain::initialize() {
+
 	initializeGUI();
 	QObject::connect(gui_.get(),   SIGNAL(sendKeySignal(KeyType)),
                      logic_.get(), SLOT(onSendKeySignal(KeyType)));
@@ -31,13 +34,16 @@ void AppMain::initialize() {
                      logic_.get(), SLOT(onStartGameSignal()));
 	QObject::connect(gui_.get(),   SIGNAL(stopGameSignal()),
                      logic_.get(), SLOT(onStopGameSignal()));
-	QObject::connect(logic_.get(), SIGNAL(sendObjectPossitionSignal(uint8_t,uint8_t,uint8_t)),
-                     gui_.get(),   SLOT(onSendObjectPossitionSignal(uint8_t,uint8_t,uint8_t)));
+	QObject::connect(logic_.get(), SIGNAL(sendObjectPossitionSignal(uint16_t,uint16_t,uint16_t)),
+	gui_.get(),   SLOT(onSendObjectPossitionSignal(uint16_t,uint16_t,uint16_t)));
+	QObject::connect(logic_.get(), SIGNAL(endGameSignal()),
+	gui_.get(),   SIGNAL(endGameSignal()));
+
 }
 
 void AppMain::start() {
-	logic_->onConfigureGameSignal(8, 25, 25);
-	logic_->onStartGameSignal();
+//	logic_->onConfigureGameSignal(8, 25, 25);
+//	logic_->onStartGameSignal();
 	startGUI();
 }
 
