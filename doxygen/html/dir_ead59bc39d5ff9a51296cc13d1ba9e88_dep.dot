@@ -1,0 +1,12 @@
+digraph "src/logic/agent" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_3d2e4578fe4cc3b7fa6177047437af5b {
+    graph [ bgcolor="#ddddee", pencolor="black", label="logic" fontname="Helvetica", fontsize="10", URL="dir_3d2e4578fe4cc3b7fa6177047437af5b.html"]
+  dir_ead59bc39d5ff9a51296cc13d1ba9e88 [shape=box, label="agent", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_ead59bc39d5ff9a51296cc13d1ba9e88.html"];
+  }
+  dir_ee3f1a7951c308657a65f8199076c1d6 [shape=box label="interfaces" URL="dir_ee3f1a7951c308657a65f8199076c1d6.html"];
+  dir_ead59bc39d5ff9a51296cc13d1ba9e88->dir_ee3f1a7951c308657a65f8199076c1d6 [headlabel="1", labeldistance=1.5 headhref="dir_000004_000002.html"];
+  dir_ee3f1a7951c308657a65f8199076c1d6->dir_ead59bc39d5ff9a51296cc13d1ba9e88 [headlabel="1", labeldistance=1.5 headhref="dir_000002_000004.html"];
+}

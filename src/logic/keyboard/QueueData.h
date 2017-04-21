@@ -14,7 +14,10 @@
 #include <boost/bind.hpp>
 #include <QDebug>
 
+//!  QueueData class
+/*!
 
+*/
 template<class T>
 class QueueData {
 public:
@@ -23,10 +26,16 @@ public:
 	typedef typename container_type::value_type value_type;
 	typedef typename boost::call_traits<value_type>::param_type param_type;
 
+	//! constructor
+	/*!
+	*/
 	QueueData(const QueueData&) = delete;
 	QueueData& operator = (const QueueData&) = delete;
 	QueueData(size_type size = 3) : unread_(0), container_(size) {}
 
+	//! write to queue
+	/*!
+	*/
 	void write(const param_type& item) {
 	    boost::mutex::scoped_lock lock(mutex_);
 	    container_.push_back(const_cast<param_type&>(item));
@@ -36,6 +45,9 @@ public:
 	    notEmpty_.notify_one();
 	}
 
+	//! read from queue
+	/*!
+	*/
 	void read(T& item) {
 	    boost::mutex::scoped_lock lock(mutex_);
 	    notEmpty_.wait(lock, boost::bind(&QueueData<value_type>::isNotEmpty, this));

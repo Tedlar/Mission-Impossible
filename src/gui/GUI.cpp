@@ -24,7 +24,10 @@ void GUI::create() {
 
 }
 
-void GUI::configure(int& argc, char **argv) {}
+void GUI::configure(int& argc, char **argv) {
+	argc_ = argc;
+	argv_ = argv;
+}
 void GUI::initialize() {}
 
 void GUI::start() {

@@ -10,12 +10,25 @@
 
 #include <src/interfaces/IObject.h>
 
+	//!  Player Object
+	/*!
 
+	*/
 class ObjectPlayer : public IObject {
 public:
+	//! constructor
+	/*!
+	*/
 	ObjectPlayer();
+
+	//! constructor
+	/*!
+	*/
 	ObjectPlayer(const ObjectPlayer&) = delete;
 
+	//! move player
+	/*!
+	*/
 	void move(uint16_t& _x, uint16_t& _y, KeyType _key = MOVE_STAY);
 };
 

@@ -11,13 +11,30 @@
 #include <src/interfaces/IKeyManager.h>
 #include <src/logic/keyboard/QueueData.h>
 
+	//!  Key manager interface implementation
+	/*!
 
+	*/
 class KeyManager : public IKeyManager {
 public:
+	//! constructor
+	/*!
+	*/
 	KeyManager();
+
+	//! destructor
+	/*!
+	*/
 	~KeyManager();
 
+	//! write key to manager
+	/*!
+	*/
 	void write(const KeyType& _type);
+
+	//! readKey
+	/*!
+	*/
 	void readKey(KeyType&);
 
 private:

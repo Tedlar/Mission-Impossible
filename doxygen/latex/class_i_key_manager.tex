@@ -1,0 +1,97 @@
+\hypertarget{class_i_key_manager}{\section{I\+Key\+Manager Class Reference}
+\label{class_i_key_manager}\index{I\+Key\+Manager@{I\+Key\+Manager}}
+}
+
+
+\hyperlink{class_i_key_manager}{I\+Key\+Manager}.  
+
+
+
+
+{\ttfamily \#include $<$I\+Key\+Manager.\+h$>$}
+
+
+
+Inheritance diagram for I\+Key\+Manager\+:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_i_key_manager_a09a303f3d3dad9ed4d845089136baf7a}{$\sim$\+I\+Key\+Manager} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_i_key_manager_a3fd6122fd6f7ba22322bd48d5847b519}{write} (const \hyperlink{_i_key_type_8h_aab0feaba617470cb4aa830dc5935238c}{Key\+Type} \&\+\_\+type)=0
+\begin{DoxyCompactList}\small\item\em write key to manager \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_i_key_manager_a77b2a438486d2014096976b4cc13ee24}{read\+Key} (\hyperlink{_i_key_type_8h_aab0feaba617470cb4aa830dc5935238c}{Key\+Type} \&)=0
+\begin{DoxyCompactList}\small\item\em read\+Key \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr\\*
+$<$ \hyperlink{class_i_key_manager}{I\+Key\+Manager} $>$ \hyperlink{class_i_key_manager_a3b018a432e457eb17883d908744e09ea}{create\+Key\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Function which create \hyperlink{class_key_manager}{Key\+Manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_i_key_manager}{I\+Key\+Manager}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_i_key_manager_a09a303f3d3dad9ed4d845089136baf7a}{\index{I\+Key\+Manager@{I\+Key\+Manager}!````~I\+Key\+Manager@{$\sim$\+I\+Key\+Manager}}
+\index{````~I\+Key\+Manager@{$\sim$\+I\+Key\+Manager}!I\+Key\+Manager@{I\+Key\+Manager}}
+\subsubsection[{$\sim$\+I\+Key\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}virtual I\+Key\+Manager\+::$\sim$\+I\+Key\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_i_key_manager_a09a303f3d3dad9ed4d845089136baf7a}
+
+
+destructor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_i_key_manager_a3b018a432e457eb17883d908744e09ea}{\index{I\+Key\+Manager@{I\+Key\+Manager}!create\+Key\+Manager@{create\+Key\+Manager}}
+\index{create\+Key\+Manager@{create\+Key\+Manager}!I\+Key\+Manager@{I\+Key\+Manager}}
+\subsubsection[{create\+Key\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ {\bf I\+Key\+Manager} $>$ I\+Key\+Manager\+::create\+Key\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_i_key_manager_a3b018a432e457eb17883d908744e09ea}
+
+
+Function which create \hyperlink{class_key_manager}{Key\+Manager}. 
+
+\hypertarget{class_i_key_manager_a77b2a438486d2014096976b4cc13ee24}{\index{I\+Key\+Manager@{I\+Key\+Manager}!read\+Key@{read\+Key}}
+\index{read\+Key@{read\+Key}!I\+Key\+Manager@{I\+Key\+Manager}}
+\subsubsection[{read\+Key}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+Key\+Manager\+::read\+Key (
+\begin{DoxyParamCaption}
+\item[{{\bf Key\+Type} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_key_manager_a77b2a438486d2014096976b4cc13ee24}
+
+
+read\+Key 
+
+
+
+Implemented in \hyperlink{class_key_manager_a4a0be9ad9f14de2f8fbf9563d4724c14}{Key\+Manager}.
+
+\hypertarget{class_i_key_manager_a3fd6122fd6f7ba22322bd48d5847b519}{\index{I\+Key\+Manager@{I\+Key\+Manager}!write@{write}}
+\index{write@{write}!I\+Key\+Manager@{I\+Key\+Manager}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+Key\+Manager\+::write (
+\begin{DoxyParamCaption}
+\item[{const {\bf Key\+Type} \&}]{\+\_\+type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_key_manager_a3fd6122fd6f7ba22322bd48d5847b519}
+
+
+write key to manager 
+
+
+
+Implemented in \hyperlink{class_key_manager_a19bea6cdcb3145626867432776ccffc9}{Key\+Manager}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/interfaces/\hyperlink{_i_key_manager_8h}{I\+Key\+Manager.\+h}\item 
+src/interfaces/\hyperlink{_factory_key_manager_8cpp}{Factory\+Key\+Manager.\+cpp}\end{DoxyCompactItemize}

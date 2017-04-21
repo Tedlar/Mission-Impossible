@@ -8,6 +8,8 @@
 #ifndef INTERFACES_IKEYTYPE_H_
 #define INTERFACES_IKEYTYPE_H_
 
+	//! KeyType enum
+   /*! KeyType enum */
 enum KeyType {
 	MOVE_UP,
 	MOVE_DOWN,

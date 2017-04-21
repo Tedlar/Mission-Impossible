@@ -10,7 +10,8 @@
 
 #include <src/interfaces/IObject.h>
 
-
+//! AlgorithmType enum
+/*! AlgorithmType enum */
 enum class AlgorithmType {
 	None,
 	Diagonally,
@@ -18,6 +19,8 @@ enum class AlgorithmType {
 	FirstVertically
 };
 
+//! MoveDirection enum
+/*! MoveDirection enum */
 enum class MoveDirection {
 	MOVE_UP,
 	MOVE_DOWN,
@@ -26,12 +29,24 @@ enum class MoveDirection {
 	MOVE_STAY
 };
 
+//!  Class implementing agent object
+/*!
 
+*/
 class ObjectAgent : public IObject {
 public:
+	//! constructor
+	/*!
+	*/
 	ObjectAgent();
+	//! constructor
+	/*!
+	*/
 	ObjectAgent(const ObjectAgent&) = delete;
 
+	//! move agent
+	/*!
+	*/
 	void move(uint16_t& _x, uint16_t& _y, KeyType _key = MOVE_STAY);
 
 private:

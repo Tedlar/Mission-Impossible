@@ -1,0 +1,252 @@
+\hypertarget{class_i_object}{\section{I\+Object Class Reference}
+\label{class_i_object}\index{I\+Object@{I\+Object}}
+}
+
+
+Object interface.  
+
+
+
+
+{\ttfamily \#include $<$I\+Object.\+h$>$}
+
+
+
+Inheritance diagram for I\+Object\+:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_i_object_a8833f77ebefa7e97e2acda58bb55966f}{$\sim$\+I\+Object} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{class_i_object_a3b529c423de1e908c4c41be54efcaa4e}{set\+Map\+Size} (uint16\+\_\+t \+\_\+size\+X, uint16\+\_\+t \+\_\+size\+Y)
+\begin{DoxyCompactList}\small\item\em set Map Size \end{DoxyCompactList}\item 
+void \hyperlink{class_i_object_a4faf12f6148460b73aa4145cecafcf3e}{set\+Start\+Position} (uint16\+\_\+t \+\_\+pos\+X, uint16\+\_\+t \+\_\+pos\+Y)
+\begin{DoxyCompactList}\small\item\em set start position \end{DoxyCompactList}\item 
+void \hyperlink{class_i_object_a1507d6d4c007408b2f18745ed90517a6}{get\+Position} (uint16\+\_\+t \&\+\_\+pos\+X, uint16\+\_\+t \&\+\_\+pos\+Y)
+\begin{DoxyCompactList}\small\item\em get position \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_i_object_ae5ced15bfc9793533c9592546942b8e3}{get\+Speed\+Value} ()
+\begin{DoxyCompactList}\small\item\em get speed \end{DoxyCompactList}\item 
+void \hyperlink{class_i_object_a1824f86dd86c51b0641799d81a530599}{set\+Controller} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_i_controller}{I\+Controller} $>$ \+\_\+controller)
+\begin{DoxyCompactList}\small\item\em set controller \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_i_object_a1bbc27b2cecbda3cf57fd6ed0099d98a}{move} (uint16\+\_\+t \&\+\_\+x, uint16\+\_\+t \&\+\_\+y, \hyperlink{_i_key_type_8h_aab0feaba617470cb4aa830dc5935238c}{Key\+Type} \+\_\+key=\hyperlink{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34a2a255050085b4deedc187c2d8be54d5a}{M\+O\+V\+E\+\_\+\+S\+T\+A\+Y})=0
+\begin{DoxyCompactList}\small\item\em move \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \hyperlink{class_i_object}{I\+Object} $>$ \hyperlink{class_i_object_a21d3108e01e2de267cb6166f8e60a930}{create\+Agent} ()
+\begin{DoxyCompactList}\small\item\em Create Agent. \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ \hyperlink{class_i_object}{I\+Object} $>$ \hyperlink{class_i_object_a3ced4ca7a72fe317af3367da52a3fa16}{create\+Player} ()
+\begin{DoxyCompactList}\small\item\em Create Player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{class_i_object_a067d82a7d079898ae61911f9c36b6057}{size\+X\+\_\+}
+\begin{DoxyCompactList}\small\item\em size\+X\+\_\+, size\+Y\+\_\+ variable \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{class_i_object_a3b035b86cf9222dae6ec787ed6f04cd7}{size\+Y\+\_\+}
+\item 
+uint16\+\_\+t \hyperlink{class_i_object_a8da894effa79f833596fe510dff2ac7e}{pos\+X\+\_\+}
+\begin{DoxyCompactList}\small\item\em pos\+X\+\_\+, pos\+Y\+\_\+ variable \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{class_i_object_a0bef077768dd2e3efab3cd50ba7f8142}{pos\+Y\+\_\+}
+\item 
+uint8\+\_\+t \hyperlink{class_i_object_a3b2908779ccca132891ef030f24ee829}{speed\+\_\+}
+\begin{DoxyCompactList}\small\item\em speed variable \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_i_controller}{I\+Controller} $>$ \hyperlink{class_i_object_a3f758d303fc89cd5242e131a145b11e0}{controller\+\_\+}
+\begin{DoxyCompactList}\small\item\em controller\+\_\+ variable \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Object interface. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_i_object_a8833f77ebefa7e97e2acda58bb55966f}{\index{I\+Object@{I\+Object}!````~I\+Object@{$\sim$\+I\+Object}}
+\index{````~I\+Object@{$\sim$\+I\+Object}!I\+Object@{I\+Object}}
+\subsubsection[{$\sim$\+I\+Object}]{\setlength{\rightskip}{0pt plus 5cm}virtual I\+Object\+::$\sim$\+I\+Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_i_object_a8833f77ebefa7e97e2acda58bb55966f}
+
+
+destructor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_i_object_a21d3108e01e2de267cb6166f8e60a930}{\index{I\+Object@{I\+Object}!create\+Agent@{create\+Agent}}
+\index{create\+Agent@{create\+Agent}!I\+Object@{I\+Object}}
+\subsubsection[{create\+Agent}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ {\bf I\+Object} $>$ I\+Object\+::create\+Agent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_i_object_a21d3108e01e2de267cb6166f8e60a930}
+
+
+Create Agent. 
+
+\hypertarget{class_i_object_a3ced4ca7a72fe317af3367da52a3fa16}{\index{I\+Object@{I\+Object}!create\+Player@{create\+Player}}
+\index{create\+Player@{create\+Player}!I\+Object@{I\+Object}}
+\subsubsection[{create\+Player}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ {\bf I\+Object} $>$ I\+Object\+::create\+Player (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_i_object_a3ced4ca7a72fe317af3367da52a3fa16}
+
+
+Create Player. 
+
+\hypertarget{class_i_object_a1507d6d4c007408b2f18745ed90517a6}{\index{I\+Object@{I\+Object}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!I\+Object@{I\+Object}}
+\subsubsection[{get\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void I\+Object\+::get\+Position (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t \&}]{\+\_\+pos\+X, }
+\item[{uint16\+\_\+t \&}]{\+\_\+pos\+Y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_i_object_a1507d6d4c007408b2f18745ed90517a6}
+
+
+get position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+pos\+X} & x of start position \\
+\hline
+{\em \+\_\+pos\+Y} & y size of map \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_i_object_ae5ced15bfc9793533c9592546942b8e3}{\index{I\+Object@{I\+Object}!get\+Speed\+Value@{get\+Speed\+Value}}
+\index{get\+Speed\+Value@{get\+Speed\+Value}!I\+Object@{I\+Object}}
+\subsubsection[{get\+Speed\+Value}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t I\+Object\+::get\+Speed\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_i_object_ae5ced15bfc9793533c9592546942b8e3}
+
+
+get speed 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t speed value 
+\end{DoxyReturn}
+\hypertarget{class_i_object_a1bbc27b2cecbda3cf57fd6ed0099d98a}{\index{I\+Object@{I\+Object}!move@{move}}
+\index{move@{move}!I\+Object@{I\+Object}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+Object\+::move (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t \&}]{\+\_\+x, }
+\item[{uint16\+\_\+t \&}]{\+\_\+y, }
+\item[{{\bf Key\+Type}}]{\+\_\+key = {\ttfamily {\bf M\+O\+V\+E\+\_\+\+S\+T\+A\+Y}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_object_a1bbc27b2cecbda3cf57fd6ed0099d98a}
+
+
+move 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em key\+Type} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_object_agent_a28bdd89c521b1f33ebbecc5c5a56f9fa}{Object\+Agent}, and \hyperlink{class_object_player_a108d685bbb392d7dca63790d03fc336a}{Object\+Player}.
+
+\hypertarget{class_i_object_a1824f86dd86c51b0641799d81a530599}{\index{I\+Object@{I\+Object}!set\+Controller@{set\+Controller}}
+\index{set\+Controller@{set\+Controller}!I\+Object@{I\+Object}}
+\subsubsection[{set\+Controller}]{\setlength{\rightskip}{0pt plus 5cm}void I\+Object\+::set\+Controller (
+\begin{DoxyParamCaption}
+\item[{const std\+::shared\+\_\+ptr$<$ {\bf I\+Controller} $>$}]{\+\_\+controller}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_i_object_a1824f86dd86c51b0641799d81a530599}
+
+
+set controller 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+controller} & to set \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_i_object_a3b529c423de1e908c4c41be54efcaa4e}{\index{I\+Object@{I\+Object}!set\+Map\+Size@{set\+Map\+Size}}
+\index{set\+Map\+Size@{set\+Map\+Size}!I\+Object@{I\+Object}}
+\subsubsection[{set\+Map\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void I\+Object\+::set\+Map\+Size (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{\+\_\+size\+X, }
+\item[{uint16\+\_\+t}]{\+\_\+size\+Y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_i_object_a3b529c423de1e908c4c41be54efcaa4e}
+
+
+set Map Size 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+size\+X} & x size of map \\
+\hline
+{\em \+\_\+size\+Y} & y size of map \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_i_object_a4faf12f6148460b73aa4145cecafcf3e}{\index{I\+Object@{I\+Object}!set\+Start\+Position@{set\+Start\+Position}}
+\index{set\+Start\+Position@{set\+Start\+Position}!I\+Object@{I\+Object}}
+\subsubsection[{set\+Start\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void I\+Object\+::set\+Start\+Position (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{\+\_\+pos\+X, }
+\item[{uint16\+\_\+t}]{\+\_\+pos\+Y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_i_object_a4faf12f6148460b73aa4145cecafcf3e}
+
+
+set start position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+pos\+X} & x of start position \\
+\hline
+{\em \+\_\+pos\+Y} & y size of map \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_i_object_a3f758d303fc89cd5242e131a145b11e0}{\index{I\+Object@{I\+Object}!controller\+\_\+@{controller\+\_\+}}
+\index{controller\+\_\+@{controller\+\_\+}!I\+Object@{I\+Object}}
+\subsubsection[{controller\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf I\+Controller}$>$ I\+Object\+::controller\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_i_object_a3f758d303fc89cd5242e131a145b11e0}
+
+
+controller\+\_\+ variable 
+
+\hypertarget{class_i_object_a8da894effa79f833596fe510dff2ac7e}{\index{I\+Object@{I\+Object}!pos\+X\+\_\+@{pos\+X\+\_\+}}
+\index{pos\+X\+\_\+@{pos\+X\+\_\+}!I\+Object@{I\+Object}}
+\subsubsection[{pos\+X\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t I\+Object\+::pos\+X\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_i_object_a8da894effa79f833596fe510dff2ac7e}
+
+
+pos\+X\+\_\+, pos\+Y\+\_\+ variable 
+
+\hypertarget{class_i_object_a0bef077768dd2e3efab3cd50ba7f8142}{\index{I\+Object@{I\+Object}!pos\+Y\+\_\+@{pos\+Y\+\_\+}}
+\index{pos\+Y\+\_\+@{pos\+Y\+\_\+}!I\+Object@{I\+Object}}
+\subsubsection[{pos\+Y\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t I\+Object\+::pos\+Y\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_i_object_a0bef077768dd2e3efab3cd50ba7f8142}
+\hypertarget{class_i_object_a067d82a7d079898ae61911f9c36b6057}{\index{I\+Object@{I\+Object}!size\+X\+\_\+@{size\+X\+\_\+}}
+\index{size\+X\+\_\+@{size\+X\+\_\+}!I\+Object@{I\+Object}}
+\subsubsection[{size\+X\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t I\+Object\+::size\+X\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_i_object_a067d82a7d079898ae61911f9c36b6057}
+
+
+size\+X\+\_\+, size\+Y\+\_\+ variable 
+
+\hypertarget{class_i_object_a3b035b86cf9222dae6ec787ed6f04cd7}{\index{I\+Object@{I\+Object}!size\+Y\+\_\+@{size\+Y\+\_\+}}
+\index{size\+Y\+\_\+@{size\+Y\+\_\+}!I\+Object@{I\+Object}}
+\subsubsection[{size\+Y\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t I\+Object\+::size\+Y\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_i_object_a3b035b86cf9222dae6ec787ed6f04cd7}
+\hypertarget{class_i_object_a3b2908779ccca132891ef030f24ee829}{\index{I\+Object@{I\+Object}!speed\+\_\+@{speed\+\_\+}}
+\index{speed\+\_\+@{speed\+\_\+}!I\+Object@{I\+Object}}
+\subsubsection[{speed\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t I\+Object\+::speed\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_i_object_a3b2908779ccca132891ef030f24ee829}
+
+
+speed variable 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/interfaces/\hyperlink{_i_object_8h}{I\+Object.\+h}\item 
+src/interfaces/\hyperlink{_factory_object_8cpp}{Factory\+Object.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,139 @@
+\hypertarget{class_controller}{\section{Controller Class Reference}
+\label{class_controller}\index{Controller@{Controller}}
+}
+
+
+Class implementing \hyperlink{class_controller}{Controller}.  
+
+
+
+
+{\ttfamily \#include $<$Controller.\+h$>$}
+
+
+
+Inheritance diagram for Controller\+:
+
+
+Collaboration diagram for Controller\+:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_controller_a95c56822d667e94b031451729ce069a9}{Controller} ()
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+void \hyperlink{class_controller_a1e0386749b623bc94b89fe832b72af1e}{set\+Player\+Position} (uint16\+\_\+t \+\_\+pos\+X, uint16\+\_\+t \+\_\+pos\+Y)
+\begin{DoxyCompactList}\small\item\em set player position \end{DoxyCompactList}\item 
+void \hyperlink{class_controller_a01231af4ac9630c21fa7b8eb358b9c66}{set\+Player\+Position\+Lost} ()
+\begin{DoxyCompactList}\small\item\em set player position lost \end{DoxyCompactList}\item 
+bool \hyperlink{class_controller_ad8bd69a309ce9fd6b393a01c3d9bfb8c}{get\+Player\+Position} (uint16\+\_\+t \&\+\_\+pos\+X, uint16\+\_\+t \&\+\_\+pos\+Y)
+\begin{DoxyCompactList}\small\item\em set player position \end{DoxyCompactList}\item 
+bool \hyperlink{class_controller_aea72e1ee0c1e0cdaf095be580dfd7043}{get\+Player\+Position\+Valid} ()
+\begin{DoxyCompactList}\small\item\em get player position lost \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class implementing \hyperlink{class_controller}{Controller}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_controller_a95c56822d667e94b031451729ce069a9}{\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\subsubsection[{Controller}]{\setlength{\rightskip}{0pt plus 5cm}Controller\+::\+Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_a95c56822d667e94b031451729ce069a9}
+
+
+constructor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_controller_ad8bd69a309ce9fd6b393a01c3d9bfb8c}{\index{Controller@{Controller}!get\+Player\+Position@{get\+Player\+Position}}
+\index{get\+Player\+Position@{get\+Player\+Position}!Controller@{Controller}}
+\subsubsection[{get\+Player\+Position}]{\setlength{\rightskip}{0pt plus 5cm}bool Controller\+::get\+Player\+Position (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t \&}]{\+\_\+pos\+X, }
+\item[{uint16\+\_\+t \&}]{\+\_\+pos\+Y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_controller_ad8bd69a309ce9fd6b393a01c3d9bfb8c}
+
+
+set player position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x position to write into \\
+\hline
+{\em y} & y position to write into \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if position is valid 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_i_controller_a64ccc2f21138196540bee209479b79e7}{I\+Controller}.
+
+\hypertarget{class_controller_aea72e1ee0c1e0cdaf095be580dfd7043}{\index{Controller@{Controller}!get\+Player\+Position\+Valid@{get\+Player\+Position\+Valid}}
+\index{get\+Player\+Position\+Valid@{get\+Player\+Position\+Valid}!Controller@{Controller}}
+\subsubsection[{get\+Player\+Position\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool Controller\+::get\+Player\+Position\+Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_controller_aea72e1ee0c1e0cdaf095be580dfd7043}
+
+
+get player position lost 
+
+
+
+Implements \hyperlink{class_i_controller_af5e9e8a8d33bf64aa6629340dd73eb4d}{I\+Controller}.
+
+\hypertarget{class_controller_a1e0386749b623bc94b89fe832b72af1e}{\index{Controller@{Controller}!set\+Player\+Position@{set\+Player\+Position}}
+\index{set\+Player\+Position@{set\+Player\+Position}!Controller@{Controller}}
+\subsubsection[{set\+Player\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\+::set\+Player\+Position (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{\+\_\+pos\+X, }
+\item[{uint16\+\_\+t}]{\+\_\+pos\+Y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_controller_a1e0386749b623bc94b89fe832b72af1e}
+
+
+set player position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & object id \\
+\hline
+{\em x} & x position to be set \\
+\hline
+{\em y} & y position to be set \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_i_controller_a4131a7d4cf16f6592ae22ba7df301a55}{I\+Controller}.
+
+\hypertarget{class_controller_a01231af4ac9630c21fa7b8eb358b9c66}{\index{Controller@{Controller}!set\+Player\+Position\+Lost@{set\+Player\+Position\+Lost}}
+\index{set\+Player\+Position\+Lost@{set\+Player\+Position\+Lost}!Controller@{Controller}}
+\subsubsection[{set\+Player\+Position\+Lost}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\+::set\+Player\+Position\+Lost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_controller_a01231af4ac9630c21fa7b8eb358b9c66}
+
+
+set player position lost 
+
+
+
+Implements \hyperlink{class_i_controller_ae8f1bbd2e4a1d7fbcc81d39cb7d15437}{I\+Controller}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/logic/controller/\hyperlink{_controller_8h}{Controller.\+h}\item 
+src/logic/controller/\hyperlink{_controller_8cpp}{Controller.\+cpp}\end{DoxyCompactItemize}

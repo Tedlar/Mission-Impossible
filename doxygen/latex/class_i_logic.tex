@@ -1,0 +1,178 @@
+\hypertarget{class_i_logic}{\section{I\+Logic Class Reference}
+\label{class_i_logic}\index{I\+Logic@{I\+Logic}}
+}
+
+
+\hyperlink{class_logic}{Logic} interface.  
+
+
+
+
+{\ttfamily \#include $<$I\+Logic.\+h$>$}
+
+
+
+Inheritance diagram for I\+Logic\+:
+
+
+Collaboration diagram for I\+Logic\+:
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_i_logic_a9213bc5b19c4767ae204934deeca7f7e}{on\+Send\+Key\+Signal} (\hyperlink{_i_key_type_8h_aab0feaba617470cb4aa830dc5935238c}{Key\+Type} \+\_\+key)=0
+\begin{DoxyCompactList}\small\item\em S\+L\+O\+T trigerred by S\+I\+G\+N\+A\+L from Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I} when key is pushed. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_i_logic_a54891f02ea7efb94ac870251087499e7}{on\+Configure\+Game\+Signal} (uint8\+\_\+t \+\_\+n, uint8\+\_\+t \+\_\+sx, uint8\+\_\+t \+\_\+sy)=0
+\begin{DoxyCompactList}\small\item\em S\+L\+O\+T trigerred by S\+I\+G\+N\+A\+L from Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I} when configuration is sent. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_i_logic_aba088d2651916573b51cda2fd952f194}{on\+Start\+Game\+Signal} ()=0
+\begin{DoxyCompactList}\small\item\em S\+L\+O\+T triggered on start\+Game\+Signal from \hyperlink{class_g_u_i}{G\+U\+I}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_i_logic_af4cc20cb1d150e2a865596b44023da8b}{on\+Stop\+Game\+Signal} ()=0
+\begin{DoxyCompactList}\small\item\em S\+L\+O\+T triggered on stop\+Game\+Signal from \hyperlink{class_g_u_i}{G\+U\+I}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_i_logic_a15cc4857190d63f2a836c44fe6d14df7}{send\+Object\+Possition\+Signal} (uint16\+\_\+t \+\_\+id, uint16\+\_\+t \+\_\+x, uint16\+\_\+t \+\_\+y)
+\begin{DoxyCompactList}\small\item\em S\+I\+G\+N\+A\+L triggered when object position is changed. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_logic_ae9fce47c689cb0de44d44dc93c5786ee}{end\+Game\+Signal} ()
+\begin{DoxyCompactList}\small\item\em S\+I\+G\+N\+A\+L of end game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_i_logic_ab79d6704efa4d2fe1ec53edf709f7ea2}{$\sim$\+I\+Logic} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \hyperlink{class_i_logic}{I\+Logic} $>$ \hyperlink{class_i_logic_a4a6fd23d2360a92705ba02b4532b29e0}{create\+Logic} ()
+\begin{DoxyCompactList}\small\item\em Function which create \hyperlink{class_logic}{Logic}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_logic}{Logic} interface. 
+
+Interface for game logic 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_i_logic_ab79d6704efa4d2fe1ec53edf709f7ea2}{\index{I\+Logic@{I\+Logic}!````~I\+Logic@{$\sim$\+I\+Logic}}
+\index{````~I\+Logic@{$\sim$\+I\+Logic}!I\+Logic@{I\+Logic}}
+\subsubsection[{$\sim$\+I\+Logic}]{\setlength{\rightskip}{0pt plus 5cm}virtual I\+Logic\+::$\sim$\+I\+Logic (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_i_logic_ab79d6704efa4d2fe1ec53edf709f7ea2}
+
+
+destructor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_i_logic_a4a6fd23d2360a92705ba02b4532b29e0}{\index{I\+Logic@{I\+Logic}!create\+Logic@{create\+Logic}}
+\index{create\+Logic@{create\+Logic}!I\+Logic@{I\+Logic}}
+\subsubsection[{create\+Logic}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ {\bf I\+Logic} $>$ I\+Logic\+::create\+Logic (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_i_logic_a4a6fd23d2360a92705ba02b4532b29e0}
+
+
+Function which create \hyperlink{class_logic}{Logic}. 
+
+\hypertarget{class_i_logic_ae9fce47c689cb0de44d44dc93c5786ee}{\index{I\+Logic@{I\+Logic}!end\+Game\+Signal@{end\+Game\+Signal}}
+\index{end\+Game\+Signal@{end\+Game\+Signal}!I\+Logic@{I\+Logic}}
+\subsubsection[{end\+Game\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}void I\+Logic\+::end\+Game\+Signal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{class_i_logic_ae9fce47c689cb0de44d44dc93c5786ee}
+
+
+S\+I\+G\+N\+A\+L of end game. 
+
+\hypertarget{class_i_logic_a54891f02ea7efb94ac870251087499e7}{\index{I\+Logic@{I\+Logic}!on\+Configure\+Game\+Signal@{on\+Configure\+Game\+Signal}}
+\index{on\+Configure\+Game\+Signal@{on\+Configure\+Game\+Signal}!I\+Logic@{I\+Logic}}
+\subsubsection[{on\+Configure\+Game\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+Logic\+::on\+Configure\+Game\+Signal (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{\+\_\+n, }
+\item[{uint8\+\_\+t}]{\+\_\+sx, }
+\item[{uint8\+\_\+t}]{\+\_\+sy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [slot]}}}\label{class_i_logic_a54891f02ea7efb94ac870251087499e7}
+
+
+S\+L\+O\+T trigerred by S\+I\+G\+N\+A\+L from Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I} when configuration is sent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & width of map \\
+\hline
+{\em y} & height of map \\
+\hline
+{\em enemy\+Number} & number of enemies \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_i_logic_a9213bc5b19c4767ae204934deeca7f7e}{\index{I\+Logic@{I\+Logic}!on\+Send\+Key\+Signal@{on\+Send\+Key\+Signal}}
+\index{on\+Send\+Key\+Signal@{on\+Send\+Key\+Signal}!I\+Logic@{I\+Logic}}
+\subsubsection[{on\+Send\+Key\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+Logic\+::on\+Send\+Key\+Signal (
+\begin{DoxyParamCaption}
+\item[{{\bf Key\+Type}}]{\+\_\+key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [slot]}}}\label{class_i_logic_a9213bc5b19c4767ae204934deeca7f7e}
+
+
+S\+L\+O\+T trigerred by S\+I\+G\+N\+A\+L from Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I} when key is pushed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & key value regarding Key\+Type class \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_i_logic_aba088d2651916573b51cda2fd952f194}{\index{I\+Logic@{I\+Logic}!on\+Start\+Game\+Signal@{on\+Start\+Game\+Signal}}
+\index{on\+Start\+Game\+Signal@{on\+Start\+Game\+Signal}!I\+Logic@{I\+Logic}}
+\subsubsection[{on\+Start\+Game\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+Logic\+::on\+Start\+Game\+Signal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [slot]}}}\label{class_i_logic_aba088d2651916573b51cda2fd952f194}
+
+
+S\+L\+O\+T triggered on start\+Game\+Signal from \hyperlink{class_g_u_i}{G\+U\+I}. 
+
+\hypertarget{class_i_logic_af4cc20cb1d150e2a865596b44023da8b}{\index{I\+Logic@{I\+Logic}!on\+Stop\+Game\+Signal@{on\+Stop\+Game\+Signal}}
+\index{on\+Stop\+Game\+Signal@{on\+Stop\+Game\+Signal}!I\+Logic@{I\+Logic}}
+\subsubsection[{on\+Stop\+Game\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+Logic\+::on\+Stop\+Game\+Signal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [slot]}}}\label{class_i_logic_af4cc20cb1d150e2a865596b44023da8b}
+
+
+S\+L\+O\+T triggered on stop\+Game\+Signal from \hyperlink{class_g_u_i}{G\+U\+I}. 
+
+\hypertarget{class_i_logic_a15cc4857190d63f2a836c44fe6d14df7}{\index{I\+Logic@{I\+Logic}!send\+Object\+Possition\+Signal@{send\+Object\+Possition\+Signal}}
+\index{send\+Object\+Possition\+Signal@{send\+Object\+Possition\+Signal}!I\+Logic@{I\+Logic}}
+\subsubsection[{send\+Object\+Possition\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}void I\+Logic\+::send\+Object\+Possition\+Signal (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{\+\_\+id, }
+\item[{uint16\+\_\+t}]{\+\_\+x, }
+\item[{uint16\+\_\+t}]{\+\_\+y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{class_i_logic_a15cc4857190d63f2a836c44fe6d14df7}
+
+
+S\+I\+G\+N\+A\+L triggered when object position is changed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & object id \\
+\hline
+{\em x} & x position to be set \\
+\hline
+{\em y} & y position to be set \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/interfaces/\hyperlink{_i_logic_8h}{I\+Logic.\+h}\item 
+src/interfaces/\hyperlink{_factory_logic_8cpp}{Factory\+Logic.\+cpp}\end{DoxyCompactItemize}
