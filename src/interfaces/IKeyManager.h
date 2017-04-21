@@ -11,13 +11,30 @@
 #include <src/interfaces/IKeyType.h>
 #include <memory>
 
+	//!  IKeyManager
+	/*!
 
+	*/
 class IKeyManager {
 public:
+	//! destructor
+	/*!
+	*/
 	virtual ~IKeyManager() {}
+
+	//! Function which create KeyManager
+	/*!
+	*/
 	static std::shared_ptr<IKeyManager> createKeyManager();
 
+	//! write key to manager
+	/*!
+	*/
 	virtual void write(const KeyType& _type) = 0;
+
+	//! readKey
+	/*!
+	*/
 	virtual void readKey(KeyType&) = 0;
 };
 

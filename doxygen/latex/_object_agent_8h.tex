@@ -1,0 +1,74 @@
+\hypertarget{_object_agent_8h}{\section{src/logic/agent/\+Object\+Agent.h File Reference}
+\label{_object_agent_8h}\index{src/logic/agent/\+Object\+Agent.\+h@{src/logic/agent/\+Object\+Agent.\+h}}
+}
+{\ttfamily \#include $<$src/interfaces/\+I\+Object.\+h$>$}\\*
+Include dependency graph for Object\+Agent.\+h\+:
+This graph shows which files directly or indirectly include this file\+:
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_object_agent}{Object\+Agent}
+\begin{DoxyCompactList}\small\item\em Class implementing agent object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_object_agent_8h_a9243adfb7445f1adcf51b73329e774c9}{Algorithm\+Type} \{ \hyperlink{_object_agent_8h_a9243adfb7445f1adcf51b73329e774c9a6adf97f83acf6453d4a6a4b1070f3754}{Algorithm\+Type\+::\+None}, 
+\hyperlink{_object_agent_8h_a9243adfb7445f1adcf51b73329e774c9afe039fc6b7f1e91e011ad8e765172326}{Algorithm\+Type\+::\+Diagonally}, 
+\hyperlink{_object_agent_8h_a9243adfb7445f1adcf51b73329e774c9ac22b8b6d6402d46729294cf7ce4ede28}{Algorithm\+Type\+::\+First\+Horizontally}, 
+\hyperlink{_object_agent_8h_a9243adfb7445f1adcf51b73329e774c9a5bab20dc22b9f6c5c3a2d9df79b75bb2}{Algorithm\+Type\+::\+First\+Vertically}
+ \}
+\begin{DoxyCompactList}\small\item\em Algorithm\+Type enum. \end{DoxyCompactList}\item 
+enum \hyperlink{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction} \{ \\*
+\hyperlink{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34ae397b4fa67c25cc1c9eae980cfdd43eb}{Move\+Direction\+::\+M\+O\+V\+E\+\_\+\+U\+P}, 
+\hyperlink{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34a8b32429247158c80deab773f4e04e1c2}{Move\+Direction\+::\+M\+O\+V\+E\+\_\+\+D\+O\+W\+N}, 
+\hyperlink{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34ad7aa835d76fc894935ade13f4d0624f8}{Move\+Direction\+::\+M\+O\+V\+E\+\_\+\+L\+E\+F\+T}, 
+\hyperlink{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34a3dc5ed1f827e8c9a6392edb90af992d5}{Move\+Direction\+::\+M\+O\+V\+E\+\_\+\+R\+I\+G\+H\+T}, 
+\\*
+\hyperlink{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34a2a255050085b4deedc187c2d8be54d5a}{Move\+Direction\+::\+M\+O\+V\+E\+\_\+\+S\+T\+A\+Y}
+ \}
+\begin{DoxyCompactList}\small\item\em Move\+Direction enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_object_agent_8h_a9243adfb7445f1adcf51b73329e774c9}{\index{Object\+Agent.\+h@{Object\+Agent.\+h}!Algorithm\+Type@{Algorithm\+Type}}
+\index{Algorithm\+Type@{Algorithm\+Type}!Object\+Agent.\+h@{Object\+Agent.\+h}}
+\subsubsection[{Algorithm\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Algorithm\+Type}\hspace{0.3cm}{\ttfamily [strong]}}}\label{_object_agent_8h_a9243adfb7445f1adcf51b73329e774c9}
+
+
+Algorithm\+Type enum. 
+
+Algorithm\+Type enum \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{None@{None}!Object\+Agent.\+h@{Object\+Agent.\+h}}\index{Object\+Agent.\+h@{Object\+Agent.\+h}!None@{None}}\item[{\em 
+\hypertarget{_object_agent_8h_a9243adfb7445f1adcf51b73329e774c9a6adf97f83acf6453d4a6a4b1070f3754}{None}\label{_object_agent_8h_a9243adfb7445f1adcf51b73329e774c9a6adf97f83acf6453d4a6a4b1070f3754}
+}]\index{Diagonally@{Diagonally}!Object\+Agent.\+h@{Object\+Agent.\+h}}\index{Object\+Agent.\+h@{Object\+Agent.\+h}!Diagonally@{Diagonally}}\item[{\em 
+\hypertarget{_object_agent_8h_a9243adfb7445f1adcf51b73329e774c9afe039fc6b7f1e91e011ad8e765172326}{Diagonally}\label{_object_agent_8h_a9243adfb7445f1adcf51b73329e774c9afe039fc6b7f1e91e011ad8e765172326}
+}]\index{First\+Horizontally@{First\+Horizontally}!Object\+Agent.\+h@{Object\+Agent.\+h}}\index{Object\+Agent.\+h@{Object\+Agent.\+h}!First\+Horizontally@{First\+Horizontally}}\item[{\em 
+\hypertarget{_object_agent_8h_a9243adfb7445f1adcf51b73329e774c9ac22b8b6d6402d46729294cf7ce4ede28}{First\+Horizontally}\label{_object_agent_8h_a9243adfb7445f1adcf51b73329e774c9ac22b8b6d6402d46729294cf7ce4ede28}
+}]\index{First\+Vertically@{First\+Vertically}!Object\+Agent.\+h@{Object\+Agent.\+h}}\index{Object\+Agent.\+h@{Object\+Agent.\+h}!First\+Vertically@{First\+Vertically}}\item[{\em 
+\hypertarget{_object_agent_8h_a9243adfb7445f1adcf51b73329e774c9a5bab20dc22b9f6c5c3a2d9df79b75bb2}{First\+Vertically}\label{_object_agent_8h_a9243adfb7445f1adcf51b73329e774c9a5bab20dc22b9f6c5c3a2d9df79b75bb2}
+}]\end{description}
+\end{Desc}
+\hypertarget{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34}{\index{Object\+Agent.\+h@{Object\+Agent.\+h}!Move\+Direction@{Move\+Direction}}
+\index{Move\+Direction@{Move\+Direction}!Object\+Agent.\+h@{Object\+Agent.\+h}}
+\subsubsection[{Move\+Direction}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Move\+Direction}\hspace{0.3cm}{\ttfamily [strong]}}}\label{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34}
+
+
+Move\+Direction enum. 
+
+Move\+Direction enum \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\+O\+V\+E\+\_\+\+U\+P@{M\+O\+V\+E\+\_\+\+U\+P}!Object\+Agent.\+h@{Object\+Agent.\+h}}\index{Object\+Agent.\+h@{Object\+Agent.\+h}!M\+O\+V\+E\+\_\+\+U\+P@{M\+O\+V\+E\+\_\+\+U\+P}}\item[{\em 
+\hypertarget{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34ae397b4fa67c25cc1c9eae980cfdd43eb}{M\+O\+V\+E\+\_\+\+U\+P}\label{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34ae397b4fa67c25cc1c9eae980cfdd43eb}
+}]\index{M\+O\+V\+E\+\_\+\+D\+O\+W\+N@{M\+O\+V\+E\+\_\+\+D\+O\+W\+N}!Object\+Agent.\+h@{Object\+Agent.\+h}}\index{Object\+Agent.\+h@{Object\+Agent.\+h}!M\+O\+V\+E\+\_\+\+D\+O\+W\+N@{M\+O\+V\+E\+\_\+\+D\+O\+W\+N}}\item[{\em 
+\hypertarget{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34a8b32429247158c80deab773f4e04e1c2}{M\+O\+V\+E\+\_\+\+D\+O\+W\+N}\label{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34a8b32429247158c80deab773f4e04e1c2}
+}]\index{M\+O\+V\+E\+\_\+\+L\+E\+F\+T@{M\+O\+V\+E\+\_\+\+L\+E\+F\+T}!Object\+Agent.\+h@{Object\+Agent.\+h}}\index{Object\+Agent.\+h@{Object\+Agent.\+h}!M\+O\+V\+E\+\_\+\+L\+E\+F\+T@{M\+O\+V\+E\+\_\+\+L\+E\+F\+T}}\item[{\em 
+\hypertarget{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34ad7aa835d76fc894935ade13f4d0624f8}{M\+O\+V\+E\+\_\+\+L\+E\+F\+T}\label{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34ad7aa835d76fc894935ade13f4d0624f8}
+}]\index{M\+O\+V\+E\+\_\+\+R\+I\+G\+H\+T@{M\+O\+V\+E\+\_\+\+R\+I\+G\+H\+T}!Object\+Agent.\+h@{Object\+Agent.\+h}}\index{Object\+Agent.\+h@{Object\+Agent.\+h}!M\+O\+V\+E\+\_\+\+R\+I\+G\+H\+T@{M\+O\+V\+E\+\_\+\+R\+I\+G\+H\+T}}\item[{\em 
+\hypertarget{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34a3dc5ed1f827e8c9a6392edb90af992d5}{M\+O\+V\+E\+\_\+\+R\+I\+G\+H\+T}\label{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34a3dc5ed1f827e8c9a6392edb90af992d5}
+}]\index{M\+O\+V\+E\+\_\+\+S\+T\+A\+Y@{M\+O\+V\+E\+\_\+\+S\+T\+A\+Y}!Object\+Agent.\+h@{Object\+Agent.\+h}}\index{Object\+Agent.\+h@{Object\+Agent.\+h}!M\+O\+V\+E\+\_\+\+S\+T\+A\+Y@{M\+O\+V\+E\+\_\+\+S\+T\+A\+Y}}\item[{\em 
+\hypertarget{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34a2a255050085b4deedc187c2d8be54d5a}{M\+O\+V\+E\+\_\+\+S\+T\+A\+Y}\label{_object_agent_8h_a00ec4eba48da32d6cbdf827185fd3d34a2a255050085b4deedc187c2d8be54d5a}
+}]\end{description}
+\end{Desc}

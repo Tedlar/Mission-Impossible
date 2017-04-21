@@ -1,0 +1,134 @@
+\hypertarget{class_logic}{\section{Logic Class Reference}
+\label{class_logic}\index{Logic@{Logic}}
+}
+
+
+\hyperlink{class_logic}{Logic} interface implementation.  
+
+
+
+
+{\ttfamily \#include $<$Logic.\+h$>$}
+
+
+
+Inheritance diagram for Logic\+:
+
+
+Collaboration diagram for Logic\+:
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_logic_a9c692b3dd5ac6e55bbe7b0aa824b8d2b}{on\+Send\+Key\+Signal} (\hyperlink{_i_key_type_8h_aab0feaba617470cb4aa830dc5935238c}{Key\+Type})
+\begin{DoxyCompactList}\small\item\em S\+L\+O\+T trigerred by S\+I\+G\+N\+A\+L from Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I} when key is pushed. \end{DoxyCompactList}\item 
+void \hyperlink{class_logic_a5fe01497c7c6fb9df98fda43fcb2d9f4}{on\+Configure\+Game\+Signal} (uint8\+\_\+t \+\_\+n, uint8\+\_\+t \+\_\+sx, uint8\+\_\+t \+\_\+sy)
+\begin{DoxyCompactList}\small\item\em S\+L\+O\+T trigerred by S\+I\+G\+N\+A\+L from Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I} when configuration is sent. \end{DoxyCompactList}\item 
+void \hyperlink{class_logic_a650bd99eef59a4ed2b4f4e1b5f0d00e1}{on\+Start\+Game\+Signal} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+O\+T triggered on start\+Game\+Signal from \hyperlink{class_g_u_i}{G\+U\+I}. \end{DoxyCompactList}\item 
+void \hyperlink{class_logic_a4b486bf7ee95ec3e8f8ed8a84ed99748}{on\+Stop\+Game\+Signal} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+O\+T triggered on stop\+Game\+Signal from \hyperlink{class_g_u_i}{G\+U\+I}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_logic_a65e13b69a0b4ae0c31be94bcfe11898a}{Logic} ()
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hyperlink{class_logic_a406131db5b87e8d4b396aec37f3c1f69}{$\sim$\+Logic} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_logic}{Logic} interface implementation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_logic_a65e13b69a0b4ae0c31be94bcfe11898a}{\index{Logic@{Logic}!Logic@{Logic}}
+\index{Logic@{Logic}!Logic@{Logic}}
+\subsubsection[{Logic}]{\setlength{\rightskip}{0pt plus 5cm}Logic\+::\+Logic (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_logic_a65e13b69a0b4ae0c31be94bcfe11898a}
+
+
+constructor 
+
+\hypertarget{class_logic_a406131db5b87e8d4b396aec37f3c1f69}{\index{Logic@{Logic}!````~Logic@{$\sim$\+Logic}}
+\index{````~Logic@{$\sim$\+Logic}!Logic@{Logic}}
+\subsubsection[{$\sim$\+Logic}]{\setlength{\rightskip}{0pt plus 5cm}Logic\+::$\sim$\+Logic (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_logic_a406131db5b87e8d4b396aec37f3c1f69}
+
+
+destructor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_logic_a5fe01497c7c6fb9df98fda43fcb2d9f4}{\index{Logic@{Logic}!on\+Configure\+Game\+Signal@{on\+Configure\+Game\+Signal}}
+\index{on\+Configure\+Game\+Signal@{on\+Configure\+Game\+Signal}!Logic@{Logic}}
+\subsubsection[{on\+Configure\+Game\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}void Logic\+::on\+Configure\+Game\+Signal (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{\+\_\+n, }
+\item[{uint8\+\_\+t}]{\+\_\+sx, }
+\item[{uint8\+\_\+t}]{\+\_\+sy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_logic_a5fe01497c7c6fb9df98fda43fcb2d9f4}
+
+
+S\+L\+O\+T trigerred by S\+I\+G\+N\+A\+L from Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I} when configuration is sent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & width of map \\
+\hline
+{\em y} & height of map \\
+\hline
+{\em enemy\+Number} & number of enemies \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_logic_a9c692b3dd5ac6e55bbe7b0aa824b8d2b}{\index{Logic@{Logic}!on\+Send\+Key\+Signal@{on\+Send\+Key\+Signal}}
+\index{on\+Send\+Key\+Signal@{on\+Send\+Key\+Signal}!Logic@{Logic}}
+\subsubsection[{on\+Send\+Key\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}void Logic\+::on\+Send\+Key\+Signal (
+\begin{DoxyParamCaption}
+\item[{{\bf Key\+Type}}]{\+\_\+key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_logic_a9c692b3dd5ac6e55bbe7b0aa824b8d2b}
+
+
+S\+L\+O\+T trigerred by S\+I\+G\+N\+A\+L from Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I} when key is pushed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & key value regarding Key\+Type class \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_logic_a650bd99eef59a4ed2b4f4e1b5f0d00e1}{\index{Logic@{Logic}!on\+Start\+Game\+Signal@{on\+Start\+Game\+Signal}}
+\index{on\+Start\+Game\+Signal@{on\+Start\+Game\+Signal}!Logic@{Logic}}
+\subsubsection[{on\+Start\+Game\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}void Logic\+::on\+Start\+Game\+Signal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_logic_a650bd99eef59a4ed2b4f4e1b5f0d00e1}
+
+
+S\+L\+O\+T triggered on start\+Game\+Signal from \hyperlink{class_g_u_i}{G\+U\+I}. 
+
+\hypertarget{class_logic_a4b486bf7ee95ec3e8f8ed8a84ed99748}{\index{Logic@{Logic}!on\+Stop\+Game\+Signal@{on\+Stop\+Game\+Signal}}
+\index{on\+Stop\+Game\+Signal@{on\+Stop\+Game\+Signal}!Logic@{Logic}}
+\subsubsection[{on\+Stop\+Game\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}void Logic\+::on\+Stop\+Game\+Signal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_logic_a4b486bf7ee95ec3e8f8ed8a84ed99748}
+
+
+S\+L\+O\+T triggered on stop\+Game\+Signal from \hyperlink{class_g_u_i}{G\+U\+I}. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/logic/\hyperlink{_logic_8h}{Logic.\+h}\item 
+src/logic/\hyperlink{_logic_8cpp}{Logic.\+cpp}\end{DoxyCompactItemize}

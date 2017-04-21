@@ -1,0 +1,143 @@
+\hypertarget{class_i_controller}{\section{I\+Controller Class Reference}
+\label{class_i_controller}\index{I\+Controller@{I\+Controller}}
+}
+
+
+\hyperlink{class_controller}{Controller} interface.  
+
+
+
+
+{\ttfamily \#include $<$I\+Controller.\+h$>$}
+
+
+
+Inheritance diagram for I\+Controller\+:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_i_controller_a30b618142be776fd779255998a540e08}{$\sim$\+I\+Controller} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_i_controller_a4131a7d4cf16f6592ae22ba7df301a55}{set\+Player\+Position} (uint16\+\_\+t \+\_\+pos\+X, uint16\+\_\+t \+\_\+pos\+Y)=0
+\begin{DoxyCompactList}\small\item\em set argc \& argv and configure \hyperlink{class_g_u_i}{G\+U\+I} \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_i_controller_ae8f1bbd2e4a1d7fbcc81d39cb7d15437}{set\+Player\+Position\+Lost} ()=0
+\begin{DoxyCompactList}\small\item\em Function which create \hyperlink{class_g_u_i}{G\+U\+I}, should be called after initialuze. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_i_controller_a64ccc2f21138196540bee209479b79e7}{get\+Player\+Position} (uint16\+\_\+t \&\+\_\+pos\+X, uint16\+\_\+t \&\+\_\+pos\+Y)=0
+\begin{DoxyCompactList}\small\item\em set argc \& argv and configure \hyperlink{class_g_u_i}{G\+U\+I} \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_i_controller_af5e9e8a8d33bf64aa6629340dd73eb4d}{get\+Player\+Position\+Valid} ()=0
+\begin{DoxyCompactList}\small\item\em Checks if position is valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr\\*
+$<$ \hyperlink{class_i_controller}{I\+Controller} $>$ \hyperlink{class_i_controller_a97a27e306ffdccb4dd19e821712fbbee}{produce\+Controller} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_controller}{Controller} interface. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_i_controller_a30b618142be776fd779255998a540e08}{\index{I\+Controller@{I\+Controller}!````~I\+Controller@{$\sim$\+I\+Controller}}
+\index{````~I\+Controller@{$\sim$\+I\+Controller}!I\+Controller@{I\+Controller}}
+\subsubsection[{$\sim$\+I\+Controller}]{\setlength{\rightskip}{0pt plus 5cm}virtual I\+Controller\+::$\sim$\+I\+Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_i_controller_a30b618142be776fd779255998a540e08}
+
+
+destructor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_i_controller_a64ccc2f21138196540bee209479b79e7}{\index{I\+Controller@{I\+Controller}!get\+Player\+Position@{get\+Player\+Position}}
+\index{get\+Player\+Position@{get\+Player\+Position}!I\+Controller@{I\+Controller}}
+\subsubsection[{get\+Player\+Position}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool I\+Controller\+::get\+Player\+Position (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t \&}]{\+\_\+pos\+X, }
+\item[{uint16\+\_\+t \&}]{\+\_\+pos\+Y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_controller_a64ccc2f21138196540bee209479b79e7}
+
+
+set argc \& argv and configure \hyperlink{class_g_u_i}{G\+U\+I} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+pos\+X} & \\
+\hline
+{\em \+\_\+pos\+Y} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_controller_ad8bd69a309ce9fd6b393a01c3d9bfb8c}{Controller}.
+
+\hypertarget{class_i_controller_af5e9e8a8d33bf64aa6629340dd73eb4d}{\index{I\+Controller@{I\+Controller}!get\+Player\+Position\+Valid@{get\+Player\+Position\+Valid}}
+\index{get\+Player\+Position\+Valid@{get\+Player\+Position\+Valid}!I\+Controller@{I\+Controller}}
+\subsubsection[{get\+Player\+Position\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool I\+Controller\+::get\+Player\+Position\+Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_controller_af5e9e8a8d33bf64aa6629340dd73eb4d}
+
+
+Checks if position is valid. 
+
+
+
+Implemented in \hyperlink{class_controller_aea72e1ee0c1e0cdaf095be580dfd7043}{Controller}.
+
+\hypertarget{class_i_controller_a97a27e306ffdccb4dd19e821712fbbee}{\index{I\+Controller@{I\+Controller}!produce\+Controller@{produce\+Controller}}
+\index{produce\+Controller@{produce\+Controller}!I\+Controller@{I\+Controller}}
+\subsubsection[{produce\+Controller}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ {\bf I\+Controller} $>$ I\+Controller\+::produce\+Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_i_controller_a97a27e306ffdccb4dd19e821712fbbee}
+\hypertarget{class_i_controller_a4131a7d4cf16f6592ae22ba7df301a55}{\index{I\+Controller@{I\+Controller}!set\+Player\+Position@{set\+Player\+Position}}
+\index{set\+Player\+Position@{set\+Player\+Position}!I\+Controller@{I\+Controller}}
+\subsubsection[{set\+Player\+Position}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+Controller\+::set\+Player\+Position (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{\+\_\+pos\+X, }
+\item[{uint16\+\_\+t}]{\+\_\+pos\+Y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_controller_a4131a7d4cf16f6592ae22ba7df301a55}
+
+
+set argc \& argv and configure \hyperlink{class_g_u_i}{G\+U\+I} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+pos\+X} & \\
+\hline
+{\em \+\_\+pos\+Y} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_controller_a1e0386749b623bc94b89fe832b72af1e}{Controller}.
+
+\hypertarget{class_i_controller_ae8f1bbd2e4a1d7fbcc81d39cb7d15437}{\index{I\+Controller@{I\+Controller}!set\+Player\+Position\+Lost@{set\+Player\+Position\+Lost}}
+\index{set\+Player\+Position\+Lost@{set\+Player\+Position\+Lost}!I\+Controller@{I\+Controller}}
+\subsubsection[{set\+Player\+Position\+Lost}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+Controller\+::set\+Player\+Position\+Lost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_controller_ae8f1bbd2e4a1d7fbcc81d39cb7d15437}
+
+
+Function which create \hyperlink{class_g_u_i}{G\+U\+I}, should be called after initialuze. 
+
+
+
+Implemented in \hyperlink{class_controller_a01231af4ac9630c21fa7b8eb358b9c66}{Controller}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/interfaces/\hyperlink{_i_controller_8h}{I\+Controller.\+h}\item 
+src/interfaces/\hyperlink{_factory_controller_8cpp}{Factory\+Controller.\+cpp}\end{DoxyCompactItemize}

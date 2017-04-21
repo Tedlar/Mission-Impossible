@@ -1,0 +1,12 @@
+digraph "src/logic/player" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_3d2e4578fe4cc3b7fa6177047437af5b {
+    graph [ bgcolor="#ddddee", pencolor="black", label="logic" fontname="Helvetica", fontsize="10", URL="dir_3d2e4578fe4cc3b7fa6177047437af5b.html"]
+  dir_85367529c5119806b72a197afb8cbbbf [shape=box, label="player", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_85367529c5119806b72a197afb8cbbbf.html"];
+  }
+  dir_ee3f1a7951c308657a65f8199076c1d6 [shape=box label="interfaces" URL="dir_ee3f1a7951c308657a65f8199076c1d6.html"];
+  dir_85367529c5119806b72a197afb8cbbbf->dir_ee3f1a7951c308657a65f8199076c1d6 [headlabel="1", labeldistance=1.5 headhref="dir_000007_000002.html"];
+  dir_ee3f1a7951c308657a65f8199076c1d6->dir_85367529c5119806b72a197afb8cbbbf [headlabel="1", labeldistance=1.5 headhref="dir_000002_000007.html"];
+}

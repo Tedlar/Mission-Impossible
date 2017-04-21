@@ -1,0 +1,115 @@
+\hypertarget{class_queue_data}{\section{Queue\+Data$<$ T $>$ Class Template Reference}
+\label{class_queue_data}\index{Queue\+Data$<$ T $>$@{Queue\+Data$<$ T $>$}}
+}
+
+
+\hyperlink{class_queue_data}{Queue\+Data} class.  
+
+
+
+
+{\ttfamily \#include $<$Queue\+Data.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::circular\+\_\+buffer$<$ T $>$ \hyperlink{class_queue_data_a9b55a0b5873807c9c192df08859cb459}{container\+\_\+type}
+\item 
+typedef container\+\_\+type\+::size\+\_\+type \hyperlink{class_queue_data_a91e3b70427c70371043664724c62f6ce}{size\+\_\+type}
+\item 
+typedef container\+\_\+type\+::value\+\_\+type \hyperlink{class_queue_data_a9870b0080932714fd92fd92595687130}{value\+\_\+type}
+\item 
+typedef boost\+::call\+\_\+traits\\*
+$<$ \hyperlink{class_queue_data_a9870b0080932714fd92fd92595687130}{value\+\_\+type} $>$\+::\hyperlink{class_queue_data_a15ff80c62590d5e134ef147ccab7b0e6}{param\+\_\+type} \hyperlink{class_queue_data_a15ff80c62590d5e134ef147ccab7b0e6}{param\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_queue_data_a0c3c2aa0a2c42eee45cf8fbcce511785}{Queue\+Data} (const \hyperlink{class_queue_data}{Queue\+Data} \&)=delete
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hyperlink{class_queue_data}{Queue\+Data} \& \hyperlink{class_queue_data_a0991aeae44d7ec57b3f0fbdb7867976b}{operator=} (const \hyperlink{class_queue_data}{Queue\+Data} \&)=delete
+\item 
+\hyperlink{class_queue_data_a053bfdfafd3b44b23e86910623c7dbdc}{Queue\+Data} (\hyperlink{class_queue_data_a91e3b70427c70371043664724c62f6ce}{size\+\_\+type} size=3)
+\item 
+void \hyperlink{class_queue_data_aea2116b559b77ae69cb2399cb3ee0d6c}{write} (const \hyperlink{class_queue_data_a15ff80c62590d5e134ef147ccab7b0e6}{param\+\_\+type} \&item)
+\begin{DoxyCompactList}\small\item\em write to queue \end{DoxyCompactList}\item 
+void \hyperlink{class_queue_data_a23ce1f992a6c01b1ac2329fba86f0a90}{read} (T \&item)
+\begin{DoxyCompactList}\small\item\em read from queue \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$class Queue\+Data$<$ T $>$}
+
+\hyperlink{class_queue_data}{Queue\+Data} class. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{class_queue_data_a9b55a0b5873807c9c192df08859cb459}{\index{Queue\+Data@{Queue\+Data}!container\+\_\+type@{container\+\_\+type}}
+\index{container\+\_\+type@{container\+\_\+type}!Queue\+Data@{Queue\+Data}}
+\subsubsection[{container\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef boost\+::circular\+\_\+buffer$<$T$>$ {\bf Queue\+Data}$<$ T $>$\+::{\bf container\+\_\+type}}}\label{class_queue_data_a9b55a0b5873807c9c192df08859cb459}
+\hypertarget{class_queue_data_a15ff80c62590d5e134ef147ccab7b0e6}{\index{Queue\+Data@{Queue\+Data}!param\+\_\+type@{param\+\_\+type}}
+\index{param\+\_\+type@{param\+\_\+type}!Queue\+Data@{Queue\+Data}}
+\subsubsection[{param\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef boost\+::call\+\_\+traits$<${\bf value\+\_\+type}$>$\+::{\bf param\+\_\+type} {\bf Queue\+Data}$<$ T $>$\+::{\bf param\+\_\+type}}}\label{class_queue_data_a15ff80c62590d5e134ef147ccab7b0e6}
+\hypertarget{class_queue_data_a91e3b70427c70371043664724c62f6ce}{\index{Queue\+Data@{Queue\+Data}!size\+\_\+type@{size\+\_\+type}}
+\index{size\+\_\+type@{size\+\_\+type}!Queue\+Data@{Queue\+Data}}
+\subsubsection[{size\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef container\+\_\+type\+::size\+\_\+type {\bf Queue\+Data}$<$ T $>$\+::{\bf size\+\_\+type}}}\label{class_queue_data_a91e3b70427c70371043664724c62f6ce}
+\hypertarget{class_queue_data_a9870b0080932714fd92fd92595687130}{\index{Queue\+Data@{Queue\+Data}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!Queue\+Data@{Queue\+Data}}
+\subsubsection[{value\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef container\+\_\+type\+::value\+\_\+type {\bf Queue\+Data}$<$ T $>$\+::{\bf value\+\_\+type}}}\label{class_queue_data_a9870b0080932714fd92fd92595687130}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_queue_data_a0c3c2aa0a2c42eee45cf8fbcce511785}{\index{Queue\+Data@{Queue\+Data}!Queue\+Data@{Queue\+Data}}
+\index{Queue\+Data@{Queue\+Data}!Queue\+Data@{Queue\+Data}}
+\subsubsection[{Queue\+Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Queue\+Data}$<$ T $>$\+::{\bf Queue\+Data} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Queue\+Data}$<$ T $>$ \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{class_queue_data_a0c3c2aa0a2c42eee45cf8fbcce511785}
+
+
+constructor 
+
+\hypertarget{class_queue_data_a053bfdfafd3b44b23e86910623c7dbdc}{\index{Queue\+Data@{Queue\+Data}!Queue\+Data@{Queue\+Data}}
+\index{Queue\+Data@{Queue\+Data}!Queue\+Data@{Queue\+Data}}
+\subsubsection[{Queue\+Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Queue\+Data}$<$ T $>$\+::{\bf Queue\+Data} (
+\begin{DoxyParamCaption}
+\item[{{\bf size\+\_\+type}}]{size = {\ttfamily 3}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_queue_data_a053bfdfafd3b44b23e86910623c7dbdc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_queue_data_a0991aeae44d7ec57b3f0fbdb7867976b}{\index{Queue\+Data@{Queue\+Data}!operator=@{operator=}}
+\index{operator=@{operator=}!Queue\+Data@{Queue\+Data}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Queue\+Data}\& {\bf Queue\+Data}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Queue\+Data}$<$ T $>$ \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{class_queue_data_a0991aeae44d7ec57b3f0fbdb7867976b}
+\hypertarget{class_queue_data_a23ce1f992a6c01b1ac2329fba86f0a90}{\index{Queue\+Data@{Queue\+Data}!read@{read}}
+\index{read@{read}!Queue\+Data@{Queue\+Data}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf Queue\+Data}$<$ T $>$\+::read (
+\begin{DoxyParamCaption}
+\item[{T \&}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_queue_data_a23ce1f992a6c01b1ac2329fba86f0a90}
+
+
+read from queue 
+
+\hypertarget{class_queue_data_aea2116b559b77ae69cb2399cb3ee0d6c}{\index{Queue\+Data@{Queue\+Data}!write@{write}}
+\index{write@{write}!Queue\+Data@{Queue\+Data}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf Queue\+Data}$<$ T $>$\+::write (
+\begin{DoxyParamCaption}
+\item[{const {\bf param\+\_\+type} \&}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_queue_data_aea2116b559b77ae69cb2399cb3ee0d6c}
+
+
+write to queue 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/logic/keyboard/\hyperlink{_queue_data_8h}{Queue\+Data.\+h}\end{DoxyCompactItemize}

@@ -11,15 +11,30 @@
 #include <src/interfaces/IKeyType.h>
 #include <QtWidgets/qmainwindow.h>
 
-
+	//!  Window interface implementation
+	/*!
+		Window class
+	*/
 class Window : public QMainWindow {
 	Q_OBJECT
 public:
+
+	//! destructor
+	/*!
+	*/
 	virtual ~Window();
 
+	//! set event filter
+	/*!
+	  \param target object id
+	  \param event number of arguments
+	*/
 	bool eventFilter(QObject *target, QEvent *event);
 
 signals:
+	//!Signal triggered when new key is triggered
+	/*!
+	*/
 	void sendKeySignal(KeyType);
 };
 

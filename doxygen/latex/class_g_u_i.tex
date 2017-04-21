@@ -1,0 +1,237 @@
+\hypertarget{class_g_u_i}{\section{G\+U\+I Class Reference}
+\label{class_g_u_i}\index{G\+U\+I@{G\+U\+I}}
+}
+
+
+\hyperlink{class_g_u_i}{G\+U\+I} interface implementation.  
+
+
+
+
+{\ttfamily \#include $<$G\+U\+I.\+h$>$}
+
+
+
+Inheritance diagram for G\+U\+I\+:
+
+
+Collaboration diagram for G\+U\+I\+:
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_g_u_i_a5bd6d43f0a9c4cc69cfb59a80ef0890a}{on\+Send\+Object\+Possition\+Signal} (uint16\+\_\+t id, uint16\+\_\+t x, uint16\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em S\+L\+O\+T triggered by S\+I\+G\+N\+A\+L from game logic when object positions needs to be set. This function converts format of parametrs and triggers signal for Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I}. \end{DoxyCompactList}\item 
+void \hyperlink{class_g_u_i_ae554930b3a591888f79cdb81251aadf9}{on\+Configure\+Game\+Signal} (int x, int y, int enemy\+Number)
+\begin{DoxyCompactList}\small\item\em S\+L\+O\+T trigerred by S\+I\+G\+N\+A\+L from Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I} when configuration should be send. \end{DoxyCompactList}\item 
+void \hyperlink{class_g_u_i_afb137f48b842f54516c497c3b555ff80}{onsend\+Key} (int key)
+\begin{DoxyCompactList}\small\item\em S\+L\+O\+T trigerred by S\+I\+G\+N\+A\+L from Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I} when key is pushed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_g_u_i_a65e8a6aae95d7886ff4904c5bdafd456}{send\+Object\+Possition\+Signal} (Q\+Variant object, Q\+Variant x, Q\+Variant y)
+\begin{DoxyCompactList}\small\item\em S\+I\+G\+N\+A\+L used by S\+L\+O\+T in Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I}. \end{DoxyCompactList}\item 
+void \hyperlink{class_g_u_i_aa43572496811fb329819369bc958868b}{end\+Game\+Signal} ()
+\begin{DoxyCompactList}\small\item\em Signal triggered when game ends. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_g_u_i_ac9cae2328dcb5d83bdfaeca49a2eb695}{$\sim$\+G\+U\+I} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{class_g_u_i_acae178ada7d9c239dd8007bb86051db6}{create} ()
+\begin{DoxyCompactList}\small\item\em Function which create \hyperlink{class_g_u_i}{G\+U\+I}, should be called after initialuze. \end{DoxyCompactList}\item 
+void \hyperlink{class_g_u_i_aa9eeebe65d31fac581e474af4214bf0a}{configure} (int \&argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em set argc \& argv and configure \hyperlink{class_g_u_i}{G\+U\+I} \end{DoxyCompactList}\item 
+void \hyperlink{class_g_u_i_a19525b333677953bbc2df2639e2aa82c}{initialize} ()
+\begin{DoxyCompactList}\small\item\em init \hyperlink{class_g_u_i}{G\+U\+I}, should be called after configure \end{DoxyCompactList}\item 
+void \hyperlink{class_g_u_i_a5f00ff7017a733d8e5489c99d041ad58}{start} ()
+\begin{DoxyCompactList}\small\item\em starts \hyperlink{class_g_u_i}{G\+U\+I} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_g_u_i}{G\+U\+I} interface implementation. 
+
+\hyperlink{class_g_u_i}{G\+U\+I} class connects to qml 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_g_u_i_ac9cae2328dcb5d83bdfaeca49a2eb695}{\index{G\+U\+I@{G\+U\+I}!````~G\+U\+I@{$\sim$\+G\+U\+I}}
+\index{````~G\+U\+I@{$\sim$\+G\+U\+I}!G\+U\+I@{G\+U\+I}}
+\subsubsection[{$\sim$\+G\+U\+I}]{\setlength{\rightskip}{0pt plus 5cm}G\+U\+I\+::$\sim$\+G\+U\+I (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_g_u_i_ac9cae2328dcb5d83bdfaeca49a2eb695}
+
+
+destructor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_g_u_i_aa9eeebe65d31fac581e474af4214bf0a}{\index{G\+U\+I@{G\+U\+I}!configure@{configure}}
+\index{configure@{configure}!G\+U\+I@{G\+U\+I}}
+\subsubsection[{configure}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::configure (
+\begin{DoxyParamCaption}
+\item[{int \&}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_g_u_i_aa9eeebe65d31fac581e474af4214bf0a}
+
+
+set argc \& argv and configure \hyperlink{class_g_u_i}{G\+U\+I} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & number of arguments \\
+\hline
+{\em argv} & arguments \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_i_g_u_i_ae28e4e2c51d9d3209b9ad0dfb08c9fa6}{I\+G\+U\+I}.
+
+\hypertarget{class_g_u_i_acae178ada7d9c239dd8007bb86051db6}{\index{G\+U\+I@{G\+U\+I}!create@{create}}
+\index{create@{create}!G\+U\+I@{G\+U\+I}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::create (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_g_u_i_acae178ada7d9c239dd8007bb86051db6}
+
+
+Function which create \hyperlink{class_g_u_i}{G\+U\+I}, should be called after initialuze. 
+
+
+
+Implements \hyperlink{class_i_g_u_i_af1c9039be9e29c34bc70eeae7de91fe5}{I\+G\+U\+I}.
+
+\hypertarget{class_g_u_i_aa43572496811fb329819369bc958868b}{\index{G\+U\+I@{G\+U\+I}!end\+Game\+Signal@{end\+Game\+Signal}}
+\index{end\+Game\+Signal@{end\+Game\+Signal}!G\+U\+I@{G\+U\+I}}
+\subsubsection[{end\+Game\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::end\+Game\+Signal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{class_g_u_i_aa43572496811fb329819369bc958868b}
+
+
+Signal triggered when game ends. 
+
+\hypertarget{class_g_u_i_a19525b333677953bbc2df2639e2aa82c}{\index{G\+U\+I@{G\+U\+I}!initialize@{initialize}}
+\index{initialize@{initialize}!G\+U\+I@{G\+U\+I}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_g_u_i_a19525b333677953bbc2df2639e2aa82c}
+
+
+init \hyperlink{class_g_u_i}{G\+U\+I}, should be called after configure 
+
+
+
+Implements \hyperlink{class_i_g_u_i_af315e9117ea57f0e76175639e75d549e}{I\+G\+U\+I}.
+
+\hypertarget{class_g_u_i_ae554930b3a591888f79cdb81251aadf9}{\index{G\+U\+I@{G\+U\+I}!on\+Configure\+Game\+Signal@{on\+Configure\+Game\+Signal}}
+\index{on\+Configure\+Game\+Signal@{on\+Configure\+Game\+Signal}!G\+U\+I@{G\+U\+I}}
+\subsubsection[{on\+Configure\+Game\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::on\+Configure\+Game\+Signal (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{enemy\+Number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_g_u_i_ae554930b3a591888f79cdb81251aadf9}
+
+
+S\+L\+O\+T trigerred by S\+I\+G\+N\+A\+L from Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I} when configuration should be send. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & width of map \\
+\hline
+{\em y} & height of map \\
+\hline
+{\em enemy\+Number} & number of enemies \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_g_u_i_afb137f48b842f54516c497c3b555ff80}{\index{G\+U\+I@{G\+U\+I}!onsend\+Key@{onsend\+Key}}
+\index{onsend\+Key@{onsend\+Key}!G\+U\+I@{G\+U\+I}}
+\subsubsection[{onsend\+Key}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::onsend\+Key (
+\begin{DoxyParamCaption}
+\item[{int}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_g_u_i_afb137f48b842f54516c497c3b555ff80}
+
+
+S\+L\+O\+T trigerred by S\+I\+G\+N\+A\+L from Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I} when key is pushed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & key value regarding Key\+Type class \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_g_u_i_a5bd6d43f0a9c4cc69cfb59a80ef0890a}{\index{G\+U\+I@{G\+U\+I}!on\+Send\+Object\+Possition\+Signal@{on\+Send\+Object\+Possition\+Signal}}
+\index{on\+Send\+Object\+Possition\+Signal@{on\+Send\+Object\+Possition\+Signal}!G\+U\+I@{G\+U\+I}}
+\subsubsection[{on\+Send\+Object\+Possition\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::on\+Send\+Object\+Possition\+Signal (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{id, }
+\item[{uint16\+\_\+t}]{x, }
+\item[{uint16\+\_\+t}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_g_u_i_a5bd6d43f0a9c4cc69cfb59a80ef0890a}
+
+
+S\+L\+O\+T triggered by S\+I\+G\+N\+A\+L from game logic when object positions needs to be set. This function converts format of parametrs and triggers signal for Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & object id \\
+\hline
+{\em x} & x position to be set \\
+\hline
+{\em y} & y position to be set \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_g_u_i_a65e8a6aae95d7886ff4904c5bdafd456}{\index{G\+U\+I@{G\+U\+I}!send\+Object\+Possition\+Signal@{send\+Object\+Possition\+Signal}}
+\index{send\+Object\+Possition\+Signal@{send\+Object\+Possition\+Signal}!G\+U\+I@{G\+U\+I}}
+\subsubsection[{send\+Object\+Possition\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::send\+Object\+Possition\+Signal (
+\begin{DoxyParamCaption}
+\item[{Q\+Variant}]{object, }
+\item[{Q\+Variant}]{x, }
+\item[{Q\+Variant}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{class_g_u_i_a65e8a6aae95d7886ff4904c5bdafd456}
+
+
+S\+I\+G\+N\+A\+L used by S\+L\+O\+T in Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & object id \\
+\hline
+{\em x} & x position to be set \\
+\hline
+{\em y} & y position to be set \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_g_u_i_a5f00ff7017a733d8e5489c99d041ad58}{\index{G\+U\+I@{G\+U\+I}!start@{start}}
+\index{start@{start}!G\+U\+I@{G\+U\+I}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void G\+U\+I\+::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_g_u_i_a5f00ff7017a733d8e5489c99d041ad58}
+
+
+starts \hyperlink{class_g_u_i}{G\+U\+I} 
+
+
+
+Implements \hyperlink{class_i_g_u_i_af82e18ade2dd8fc7bab06a3381fd210b}{I\+G\+U\+I}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/gui/\hyperlink{_g_u_i_8h}{G\+U\+I.\+h}\item 
+src/gui/\hyperlink{_g_u_i_8cpp}{G\+U\+I.\+cpp}\end{DoxyCompactItemize}

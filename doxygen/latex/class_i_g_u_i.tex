@@ -1,0 +1,234 @@
+\hypertarget{class_i_g_u_i}{\section{I\+G\+U\+I Class Reference}
+\label{class_i_g_u_i}\index{I\+G\+U\+I@{I\+G\+U\+I}}
+}
+
+
+\hyperlink{class_g_u_i}{G\+U\+I} Interface.  
+
+
+
+
+{\ttfamily \#include $<$I\+G\+U\+I.\+h$>$}
+
+
+
+Inheritance diagram for I\+G\+U\+I\+:
+
+
+Collaboration diagram for I\+G\+U\+I\+:
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_i_g_u_i_aff38798d3077ddeba0b84d689abf5145}{on\+Send\+Object\+Possition\+Signal} (uint16\+\_\+t \+\_\+id, uint16\+\_\+t \+\_\+x, uint16\+\_\+t \+\_\+y)=0
+\begin{DoxyCompactList}\small\item\em S\+I\+G\+N\+A\+L used by S\+L\+O\+T in Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_i_g_u_i_aa462ce37550a750de58e1edcb566006c}{send\+Key\+Signal} (\hyperlink{_i_key_type_8h_aab0feaba617470cb4aa830dc5935238c}{Key\+Type})
+\begin{DoxyCompactList}\small\item\em S\+I\+G\+N\+A\+L send\+Key\+Signal. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_g_u_i_ab8554cf829f7bd94c14b2a74ffdfef2f}{configure\+Game\+Signal} (uint8\+\_\+t \+\_\+n, uint8\+\_\+t \+\_\+sx, uint8\+\_\+t \+\_\+sy)
+\begin{DoxyCompactList}\small\item\em S\+I\+G\+N\+A\+L configure\+Game\+Signal. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_g_u_i_a0d3796724d6ca722f1eef106f1bc4c5e}{start\+Game\+Signal} ()
+\begin{DoxyCompactList}\small\item\em S\+I\+G\+N\+A\+L start\+Game\+Signal. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_g_u_i_ab861d9b23d8141d38b64330c8e68bec6}{stop\+Game\+Signal} ()
+\begin{DoxyCompactList}\small\item\em S\+I\+G\+N\+A\+L stop\+Game\+Signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_i_g_u_i_a76d35859d9c3e8f8eb07620b6b410180}{$\sim$\+I\+G\+U\+I} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_i_g_u_i_af1c9039be9e29c34bc70eeae7de91fe5}{create} ()=0
+\begin{DoxyCompactList}\small\item\em Function which create \hyperlink{class_g_u_i}{G\+U\+I}, should be called after initialuze. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_i_g_u_i_ae28e4e2c51d9d3209b9ad0dfb08c9fa6}{configure} (int \&argc, char $\ast$$\ast$argv)=0
+\begin{DoxyCompactList}\small\item\em set argc \& argv and configure \hyperlink{class_g_u_i}{G\+U\+I} \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_i_g_u_i_af315e9117ea57f0e76175639e75d549e}{initialize} ()=0
+\begin{DoxyCompactList}\small\item\em init \hyperlink{class_g_u_i}{G\+U\+I}, should be called after configure \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_i_g_u_i_af82e18ade2dd8fc7bab06a3381fd210b}{start} ()=0
+\begin{DoxyCompactList}\small\item\em starts \hyperlink{class_g_u_i}{G\+U\+I} \end{DoxyCompactList}\item 
+void \hyperlink{class_i_g_u_i_a7ac246e96d4b4b96180a83c8e62329da}{send\+Key} (\hyperlink{_i_key_type_8h_aab0feaba617470cb4aa830dc5935238c}{Key\+Type} \+\_\+key)
+\begin{DoxyCompactList}\small\item\em send\+Key \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \hyperlink{class_i_g_u_i}{I\+G\+U\+I} $>$ \hyperlink{class_i_g_u_i_a9b188b3eb0b4ae21059ac9993098db10}{create\+G\+U\+I} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_g_u_i}{G\+U\+I} Interface. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_i_g_u_i_a76d35859d9c3e8f8eb07620b6b410180}{\index{I\+G\+U\+I@{I\+G\+U\+I}!````~I\+G\+U\+I@{$\sim$\+I\+G\+U\+I}}
+\index{````~I\+G\+U\+I@{$\sim$\+I\+G\+U\+I}!I\+G\+U\+I@{I\+G\+U\+I}}
+\subsubsection[{$\sim$\+I\+G\+U\+I}]{\setlength{\rightskip}{0pt plus 5cm}virtual I\+G\+U\+I\+::$\sim$\+I\+G\+U\+I (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_i_g_u_i_a76d35859d9c3e8f8eb07620b6b410180}
+
+
+destructor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_i_g_u_i_ae28e4e2c51d9d3209b9ad0dfb08c9fa6}{\index{I\+G\+U\+I@{I\+G\+U\+I}!configure@{configure}}
+\index{configure@{configure}!I\+G\+U\+I@{I\+G\+U\+I}}
+\subsubsection[{configure}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+G\+U\+I\+::configure (
+\begin{DoxyParamCaption}
+\item[{int \&}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_g_u_i_ae28e4e2c51d9d3209b9ad0dfb08c9fa6}
+
+
+set argc \& argv and configure \hyperlink{class_g_u_i}{G\+U\+I} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & number of arguments \\
+\hline
+{\em argv} & arguments \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_g_u_i_aa9eeebe65d31fac581e474af4214bf0a}{G\+U\+I}.
+
+\hypertarget{class_i_g_u_i_ab8554cf829f7bd94c14b2a74ffdfef2f}{\index{I\+G\+U\+I@{I\+G\+U\+I}!configure\+Game\+Signal@{configure\+Game\+Signal}}
+\index{configure\+Game\+Signal@{configure\+Game\+Signal}!I\+G\+U\+I@{I\+G\+U\+I}}
+\subsubsection[{configure\+Game\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}void I\+G\+U\+I\+::configure\+Game\+Signal (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{\+\_\+n, }
+\item[{uint8\+\_\+t}]{\+\_\+sx, }
+\item[{uint8\+\_\+t}]{\+\_\+sy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{class_i_g_u_i_ab8554cf829f7bd94c14b2a74ffdfef2f}
+
+
+S\+I\+G\+N\+A\+L configure\+Game\+Signal. 
+
+\hypertarget{class_i_g_u_i_af1c9039be9e29c34bc70eeae7de91fe5}{\index{I\+G\+U\+I@{I\+G\+U\+I}!create@{create}}
+\index{create@{create}!I\+G\+U\+I@{I\+G\+U\+I}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+G\+U\+I\+::create (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_g_u_i_af1c9039be9e29c34bc70eeae7de91fe5}
+
+
+Function which create \hyperlink{class_g_u_i}{G\+U\+I}, should be called after initialuze. 
+
+
+
+Implemented in \hyperlink{class_g_u_i_acae178ada7d9c239dd8007bb86051db6}{G\+U\+I}.
+
+\hypertarget{class_i_g_u_i_a9b188b3eb0b4ae21059ac9993098db10}{\index{I\+G\+U\+I@{I\+G\+U\+I}!create\+G\+U\+I@{create\+G\+U\+I}}
+\index{create\+G\+U\+I@{create\+G\+U\+I}!I\+G\+U\+I@{I\+G\+U\+I}}
+\subsubsection[{create\+G\+U\+I}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ {\bf I\+G\+U\+I} $>$ I\+G\+U\+I\+::create\+G\+U\+I (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_i_g_u_i_a9b188b3eb0b4ae21059ac9993098db10}
+\hypertarget{class_i_g_u_i_af315e9117ea57f0e76175639e75d549e}{\index{I\+G\+U\+I@{I\+G\+U\+I}!initialize@{initialize}}
+\index{initialize@{initialize}!I\+G\+U\+I@{I\+G\+U\+I}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+G\+U\+I\+::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_g_u_i_af315e9117ea57f0e76175639e75d549e}
+
+
+init \hyperlink{class_g_u_i}{G\+U\+I}, should be called after configure 
+
+
+
+Implemented in \hyperlink{class_g_u_i_a19525b333677953bbc2df2639e2aa82c}{G\+U\+I}.
+
+\hypertarget{class_i_g_u_i_aff38798d3077ddeba0b84d689abf5145}{\index{I\+G\+U\+I@{I\+G\+U\+I}!on\+Send\+Object\+Possition\+Signal@{on\+Send\+Object\+Possition\+Signal}}
+\index{on\+Send\+Object\+Possition\+Signal@{on\+Send\+Object\+Possition\+Signal}!I\+G\+U\+I@{I\+G\+U\+I}}
+\subsubsection[{on\+Send\+Object\+Possition\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+G\+U\+I\+::on\+Send\+Object\+Possition\+Signal (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{\+\_\+id, }
+\item[{uint16\+\_\+t}]{\+\_\+x, }
+\item[{uint16\+\_\+t}]{\+\_\+y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [slot]}}}\label{class_i_g_u_i_aff38798d3077ddeba0b84d689abf5145}
+
+
+S\+I\+G\+N\+A\+L used by S\+L\+O\+T in Q\+M\+L \hyperlink{class_g_u_i}{G\+U\+I}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & object id \\
+\hline
+{\em x} & x position to be set \\
+\hline
+{\em y} & y position to be set \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_i_g_u_i_a7ac246e96d4b4b96180a83c8e62329da}{\index{I\+G\+U\+I@{I\+G\+U\+I}!send\+Key@{send\+Key}}
+\index{send\+Key@{send\+Key}!I\+G\+U\+I@{I\+G\+U\+I}}
+\subsubsection[{send\+Key}]{\setlength{\rightskip}{0pt plus 5cm}void I\+G\+U\+I\+::send\+Key (
+\begin{DoxyParamCaption}
+\item[{{\bf Key\+Type}}]{\+\_\+key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_i_g_u_i_a7ac246e96d4b4b96180a83c8e62329da}
+
+
+send\+Key 
+
+\hypertarget{class_i_g_u_i_aa462ce37550a750de58e1edcb566006c}{\index{I\+G\+U\+I@{I\+G\+U\+I}!send\+Key\+Signal@{send\+Key\+Signal}}
+\index{send\+Key\+Signal@{send\+Key\+Signal}!I\+G\+U\+I@{I\+G\+U\+I}}
+\subsubsection[{send\+Key\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}void I\+G\+U\+I\+::send\+Key\+Signal (
+\begin{DoxyParamCaption}
+\item[{{\bf Key\+Type}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{class_i_g_u_i_aa462ce37550a750de58e1edcb566006c}
+
+
+S\+I\+G\+N\+A\+L send\+Key\+Signal. 
+
+\hypertarget{class_i_g_u_i_af82e18ade2dd8fc7bab06a3381fd210b}{\index{I\+G\+U\+I@{I\+G\+U\+I}!start@{start}}
+\index{start@{start}!I\+G\+U\+I@{I\+G\+U\+I}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\+G\+U\+I\+::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_g_u_i_af82e18ade2dd8fc7bab06a3381fd210b}
+
+
+starts \hyperlink{class_g_u_i}{G\+U\+I} 
+
+
+
+Implemented in \hyperlink{class_g_u_i_a5f00ff7017a733d8e5489c99d041ad58}{G\+U\+I}.
+
+\hypertarget{class_i_g_u_i_a0d3796724d6ca722f1eef106f1bc4c5e}{\index{I\+G\+U\+I@{I\+G\+U\+I}!start\+Game\+Signal@{start\+Game\+Signal}}
+\index{start\+Game\+Signal@{start\+Game\+Signal}!I\+G\+U\+I@{I\+G\+U\+I}}
+\subsubsection[{start\+Game\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}void I\+G\+U\+I\+::start\+Game\+Signal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{class_i_g_u_i_a0d3796724d6ca722f1eef106f1bc4c5e}
+
+
+S\+I\+G\+N\+A\+L start\+Game\+Signal. 
+
+\hypertarget{class_i_g_u_i_ab861d9b23d8141d38b64330c8e68bec6}{\index{I\+G\+U\+I@{I\+G\+U\+I}!stop\+Game\+Signal@{stop\+Game\+Signal}}
+\index{stop\+Game\+Signal@{stop\+Game\+Signal}!I\+G\+U\+I@{I\+G\+U\+I}}
+\subsubsection[{stop\+Game\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}void I\+G\+U\+I\+::stop\+Game\+Signal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{class_i_g_u_i_ab861d9b23d8141d38b64330c8e68bec6}
+
+
+S\+I\+G\+N\+A\+L stop\+Game\+Signal. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/interfaces/\hyperlink{_i_g_u_i_8h}{I\+G\+U\+I.\+h}\item 
+src/interfaces/\hyperlink{_factory_g_u_i_8cpp}{Factory\+G\+U\+I.\+cpp}\end{DoxyCompactItemize}
